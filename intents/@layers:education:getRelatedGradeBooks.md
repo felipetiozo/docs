@@ -21,7 +21,7 @@ Deve haver uma API que recebe uma requisição `POST` com a seguinte estrutura d
       "alias": String | Number | null,  // Alias do usuário
     },
   },
-  "hash": String, // (JWT Signature of data + context + version)
+  "secret": String, // Chave secreta
 }
 ```
 
