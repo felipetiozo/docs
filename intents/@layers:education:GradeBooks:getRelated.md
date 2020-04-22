@@ -1,4 +1,4 @@
-# Intent `@layers:education:getRelatedGradeBooks`
+# Intent `@layers:education:GradeBooks:getRelated`
 
 Esta intent é usada para obter dados de notas para a tela de "Notas" para um usuário específico.
 
@@ -10,7 +10,7 @@ Deve haver uma API que recebe uma requisição `POST` com a seguinte estrutura d
 {
   "context": {
     "issuedAt": Date,  // Quando a chamada foi feita
-    "action": '@layers:education:getRelatedGradeBooks',
+    "action": '@layers:education:GradeBooks:getRelated',
     "community": String,  // Comunidade do usuário
   },
   "data": {
