@@ -7,10 +7,10 @@
 | identity:email:read       | account.email                                                                                                                                                                        |
 | identity:birth:read       | account.avatar                                                                                                                                                                       |
 | identity:cpf:read         | account.birth                                                                                                                                                                        |
-| identity:communities:read | community.community community.name community.icon community.logo community.language community.timezone community.geolocation community.color community.createdAt community.updatedAt |
-| user:enrollments:read     | enrollment.id enrollment.kind enrollment.entity enrollment.group enrollment.createdAt enrollment.updatedAt                                                                           |
-| group:read                | group.id group.name group.alias group.createdAt group.updatedAt                                                                                                                      |
-| user:members:read         | member.id member.alias member.name member.createdAt member.updatedAt                                                                                                                 |
+| identity:communities:read | community.community <br/>community.name <br/>community.icon <br/>community.logo <br/>community.language <br/>community.timezone <br/>community.geolocation <br/>community.color <br/>community.createdAt <br/>community.updatedAt |
+| user:enrollments:read     | enrollment.id <br/>enrollment.kind <br/>enrollment.entity <br/>enrollment.group <br/>enrollment.createdAt <br/>enrollment.updatedAt                                                                           |
+| group:read                | <br/>group.id <br/>group.name <br/>group.alias <br/>group.createdAt <br/>group.updatedAt                                                                                                                      |
+| user:members:read         | member.id <br/>member.alias <br/>member.name <br/>member.createdAt <br/>member.updatedAt                                                                                                                 |
 
 ### Client-side
 
