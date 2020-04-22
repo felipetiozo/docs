@@ -98,7 +98,7 @@ A API deve retornar um JSON com o seguinte formato:
                 // Comentário sobre a atividade (opcional)
                 "comment": "O aluno deve estudar mais o infinitivo",
 
-                // Nota que o aluno recebeu
+                // Nota que o aluno recebeu (String, Number ou null)
                 "scoreGiven": "6.5",
 
                 // Nota máxima da atividade (opcional)
@@ -109,7 +109,7 @@ A API deve retornar um JSON com o seguinte formato:
                 "scoreMood": "good",
 
                 // Quando saiu a nota (opcional)
-                "scoreDate": "2020-03-19",
+                "scoreDate": "2020-03-19"
               }],
 
               // Lista de resultados gerais
@@ -122,18 +122,30 @@ A API deve retornar um JSON com o seguinte formato:
                 // Título do resultado
                 "label": "Faltas",
 
-                // Valor do resultado
-                "result": 0,
+                // Valor do resultado (String, Number ou null)
+                "result": 8.1,
 
                 // Indica se o resultado é bom, ruim ou neutro
                 // Valores possívels: 'neutral' | 'good' | 'bad'
                 "mood": "good",
 
                 // Indica se o resultado é o mais importante
-                "featured": true,
+                "featured": true
+              }],
+
+              // Lista de categorias (opcional)
+              "categories": [{
+                // Mesmo nome utilizado na chave 'category' da 'Activity'
+                "name": "Provas",
+
+                // Descrição adicional da categoria (opcional)
+                "description": "Provas discussivas e/ou objetivas com intuito de avaliar o aprendizado",
+
+                // Ordem de aparição, do menor para maior (opcional)
+                "order": 1
               }]
             }
-          ],
+          ]
         }
       ],
 
@@ -148,7 +160,7 @@ A API deve retornar um JSON com o seguinte formato:
           "type": "file",
 
           // URL para baixar o anexo
-          "url": "https://calculo.pdf",
+          "url": "https://calculo.pdf"
         }
       ]
     }
