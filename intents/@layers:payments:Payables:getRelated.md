@@ -1,4 +1,4 @@
-# Intent `@layers:payments:getRelatedPayables`
+# Intent `@layers:payments:Payables:getRelated`
 
 Esta intent é usada para obter dados de cobranças para a tela de "Boletos" para um usuário específico.
 
@@ -10,7 +10,7 @@ Deve haver uma API que recebe uma requisição `POST` com a seguinte estrutura d
 {
   "context": {
     "issuedAt": Date,  // Quando a chamada foi feita
-    "action": '@layers:payments:getRelatedPayables',
+    "action": '@layers:payments:Payables:getRelated',
     "community": String,  // Comunidade do usuário
   },
   "data": {
