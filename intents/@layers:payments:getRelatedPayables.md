@@ -35,80 +35,92 @@ A API deve retornar um JSON com o seguinte formato:
   "result": [
   // Grupo de cobranças
   {
-    // ID interno do grupo de cobranças
-    "id": "RA",
-
-    // Título do grupo de cobranças
-    "title": "Aluno Munir Seduca",
-
-    // Descrição do grupo de cobranças
-    "description": "Responsável Financeiro: ...\n...",
-
+    
+    // ID interno do grupo de cobranças, para possível fetch individual futuro
+    id: "RA",
+    
+    // Título do grupo de cobranças. Pode ser o nome do aluno, ou como preferirem que apareça este "grupo"
+    title: "Aluno Munir Seduca",
+    
+    // Descrição do grupo de cobranças (aceita Quebras de linha)
+    description: "Responsável Financeiro: ...\n...",
+    
     // Lista de cobranças que fazem parte desse grupo
-    "payables": [
+    payables: [
       {
-        // ID interno da cobrança no ERP
-        "id": "ID_DA_COBRANÇA",
-
-        // Identificador personalizado da cobrança (opcional)
-        "alias": "mensalidade_01_2020",
-
-        // Título da cobrança
-        "title": "Mensalidade 01/2020",
-
-        // Descrição da cobrança
-        "description": "Mensalidade referente ao mês de Janeiro de 2020",
-
-        // Status da cobrança
-        // Valores possíveis: 'paid' | 'partially_paid' | 'pending' | 'open' | 'canceled' | 'late' 
-        "status": "pending",
-
-        // Data de vencimento da cobrança
-        "dueAt": "2020-02-01",
-
-        // Quando a cobrança foi paga
-        "paidAt": null,
-
-        // Quando a cobrança foi enviada
-        "sentAt": null,
-
-        // Valor que já foi pago
-        "paidCents": 0,
-
-        // Valor total a ser pago (com multas/taxas, se aplicável)
-        "totalCents": 150000,
-
-        // Valor original (sem multas/taxas)
-        "originalCents": 150000,
-
-        // Qual é o número de parcela essa cobrança
-        "installment": 1,
+    
+        // ID interno da cobrança no ERP, para possível futura integração
+        id: "ID_DA_COBRANÇA",
+    
+        // Identificador personalizado da cobrança (opcional, será vísivel na Interface)
+        alias: "3213",
+    
+        // Qual é o número da parcela dessa cobrança?
+        installment: 1,
+    
         // Qual é o número total de parcelas
-        "installments": 12,
-
-        "boleto": {
+        installments: 12,
+    
+        // Título da cobrança (não é necessário incluir o mês/período caso utilize installment/installments
+        title: "Mensalidade",
+    
+        // Descrição da cobrança (aceita markdown)
+        description: "Mensalidade referente ao mês de Janeiro de 2020",
+    
+        // Status da cobrança, valores possíveis: 
+        // paid: Pago
+        // partially_paid: Parcialmente Pago
+        // pending: Aguardando Pagamento
+        // open: Em Aberto
+        // canceled: Cancelado
+        // late: Atrasado 
+        status: "pending",
+    
+        // Data de vencimento da cobrança (formato AAAA-MM-DD)
+        dueAt: "2020-02-01",
+    
+        // Quando a cobrança foi paga (opcional. formato AAAA-MM-DD)
+        paidAt: null,
+    
+        // Quando a cobrança foi enviada (opcional. formato AAAA-MM-DD)
+        sentAt: null,
+    
+        // Valor que já foi pago
+        centsPaid: 0,
+    
+        // Valor total a ser pago (com multas/taxas, se aplicável)
+        centsTotal: 150000,
+    
+        // Valor original (sem multas/taxas)
+        centsOriginal: 150000,
+    
+        boleto: {
+    
           // Link para baixar o boleto
-          "downloadUrl": "https://boleto.pdf", //URL,
-
+          link: "https://boleto.pdf", //URL,
+    
           // Linha digitável do boleto, será usada para o usuário copiar o código sem ter que baixar o boleto
-          "digitableCode": "12341234123412341234",
+          code: "12341234123412341234",
         },
-
-        // Lista de anexos da cobrança
-        "attachments": [
+    
+        // Lista de anexos da cobrança (opcional)
+        attachments: [
           {
+    
             // Tipo do anexo
-            // Valores possivels: 'invoice' | 'file'
-            "kind": "file",
-
+            // Valores possivels:
+            // invoice: Nota fiscal
+            // file: Arquivo
+            kind: 'file',
+    
             // Nome do anexo
-            "title": "Nota fiscal",
-
+            title: "Comprovante de estorno",
+    
             // Descrição do anexo
-            "description": "Nota fiscal referente à cobrança",
-
+            description: "Estorno realizado em 31/10/2019",
+    
             // Link para baixar o anexo
-            "downloadUrl": "https://arquivo.pdf",
+            url: "https://url.para-download.com",
           },
         ]
       }
