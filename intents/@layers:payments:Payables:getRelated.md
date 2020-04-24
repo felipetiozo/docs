@@ -61,9 +61,6 @@ A API deve retornar um JSON com o seguinte formato:
         // Qual é o número total de parcelas
         installments: 12,
     
-        // Título da cobrança (não é necessário incluir o mês/período caso utilize installment/installments
-        title: "Mensalidade",
-    
         // Descrição da cobrança (aceita markdown)
         description: "Mensalidade referente ao mês de Janeiro de 2020",
     
