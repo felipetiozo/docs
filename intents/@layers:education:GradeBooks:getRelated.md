@@ -108,7 +108,7 @@ A API deve retornar um JSON com o seguinte formato:
               }],
 
               // Lista de resultados gerais
-              "overalls": [{
+              "overall": [{
 
                 // Tipo do resultado
                 // Valores possívels: 'other' | 'attendance' | 'partial_grade' | 'final_grade'
