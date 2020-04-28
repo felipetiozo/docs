@@ -56,10 +56,6 @@ A API deve retornar um JSON com o seguinte formato:
           // Título do período letivo
           "label": "1º Bimestre",
 
-          // Descrição do período letivo (opcional)
-          // Pode ser o nome do professor ou qualquer outra coisa que descreva o período
-          "caption": "Prof. Valter",
-
           // Data de início do período
           "startsAt": "2019-01-10",
 
@@ -73,9 +69,12 @@ A API deve retornar um JSON com o seguinte formato:
           // Lista de resultados de disciplinas
           "subjects": [
             {
-
               // Título da disciplina
               "label": "Português",
+              
+              // Descrição do período letivo (opcional)
+              // Pode ser o nome do professor ou qualquer outra coisa que descreva o período
+              "caption": "Prof. Valter",
 
               // Abreviação da disciplina (opcional)
               "abbr": "PORT",
