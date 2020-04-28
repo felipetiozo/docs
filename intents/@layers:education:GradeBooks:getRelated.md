@@ -116,13 +116,16 @@ A API deve retornar um JSON com o seguinte formato:
 
                 // Título do resultado
                 "label": "Faltas",
+                
+                // Nota que o aluno recebeu neste resultado (String, Number ou null)
+                "scoreGiven": "6.5",
 
-                // Valor do resultado (String, Number ou null)
-                "result": 8.1,
+                // Nota máxima do resultado (opcional)
+                "scoreMaximum": "10",
 
-                // Indica se o resultado é bom, ruim ou neutro
-                // Valores possívels: 'neutral' | 'good' | 'bad'
-                "mood": "good",
+                // Indica se a nova é boa (nota azul), ruim (nota vermelha) ou neutra
+                // Valores possíveis: 'neutral' | 'good' | 'bad'
+                "scoreMood": "good",
 
                 // Indica se o resultado é o mais importante
                 "featured": true
