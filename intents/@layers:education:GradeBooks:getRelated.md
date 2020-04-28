@@ -71,10 +71,6 @@ A API deve retornar um JSON com o seguinte formato:
             {
               // Título da disciplina
               "label": "Português",
-              
-              // Descrição do período letivo (opcional)
-              // Pode ser o nome do professor ou qualquer outra coisa que descreva o período
-              "caption": "Prof. Valter",
 
               // Abreviação da disciplina (opcional)
               "abbr": "PORT",
