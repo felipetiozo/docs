@@ -45,6 +45,9 @@ A API deve retornar um JSON com o seguinte formato:
     // Descrição do grupo de cobranças (aceita Quebras de linha)
     description: "Responsável Financeiro: ...\n...",
     
+    // Qual é o número total de parcelas (por padrão, será a contagem de payables)
+    installments: 12,
+    
     // Lista de cobranças que fazem parte desse grupo
     payables: [
       {
@@ -57,9 +60,6 @@ A API deve retornar um JSON com o seguinte formato:
     
         // Qual é o número da parcela dessa cobrança?
         installment: 1,
-    
-        // Qual é o número total de parcelas
-        installments: 12,
     
         // Descrição da cobrança (aceita markdown)
         description: "Mensalidade referente ao mês de Janeiro de 2020",
