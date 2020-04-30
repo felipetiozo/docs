@@ -25,7 +25,7 @@ O cliente deverá abrir a seguinte url `https://id.layers.digital`, passando os 
 
 Exemplo de url: `https://id.layers.digital/?client_id=layers&redirect_uri=https://layers.com&response_type=code&scope=identity:basic:read identity:email:read identity:communities:read user:members:read user:enrollments:read group:read`
 
-[Melhores práticas de OAuth com Layers Education](https://drive.google.com/drive/folders/1Ypk8LtdICzINeCJTsFhuGbe756rGb5Kr?usp=sharing)
+[Melhores práticas de OAuth com Layers Education](https://github.com/layers-digital/docs/blob/master/oauth2.0/docs.md)
 
 ### Autenticação
 Todas as chamadas devems ser feitas na seguinte url: `https://api.layers.digital`
