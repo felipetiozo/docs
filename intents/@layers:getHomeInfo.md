@@ -1,4 +1,4 @@
-# Intent `@layers:getHomeInfo.md`
+# Intent `@layers:getHomeInfo`
 
 Esta intent é usada para obter dados da tela de "Home" do Layers Education para um usuário específico.
 
