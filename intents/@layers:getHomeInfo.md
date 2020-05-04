@@ -1,4 +1,4 @@
-# Intent `@layers:payments:Payables:getRelated`
+# Intent `@layers:getHomeInfo.md`
 
 Esta intent é usada para obter dados da tela de "Home" do Layers Education para um usuário específico.
 
