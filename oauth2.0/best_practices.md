@@ -26,6 +26,9 @@ Lembre-se sempre de deixar 16px de padding vertical entre os limites do botão e
 
 A cor é uma das melhores maneiras de reconhecer algo rápidamente, por isso recomendamos o uso de identidade do Layers. Quand o fundo for branco, a cor do um botão deve ser verde (#00B8AD) quando não pressionado e o logo do Layers deve ser branco. Para o restante dos casos, o botão deve ser claro (#FFFFFF) e o simbolo do Layers deve ser verde (#008BAD). O botão branco pode ser utilizado também quando o fundo for branco desde que tenha drop shaddow ou outline para indicar seus limites.
 
+![botao-verde](https://github.com/layers-digital/docs/blob/master/oauth2.0/green@2x.png) ![botao-branco](https://github.com/layers-digital/docs/blob/master/oauth2.0/white@2x.png) ![botao-shaddow](https://github.com/layers-digital/docs/blob/master/oauth2.0/shaddow@2x.png)
+
+
 ### 4 - Fonte 
 
 Recomendamos o uso da fonte [Nunito Bold](https://fonts.google.com/specimen/Nunito). Para instalar, procure pela fonte Nunito no Google Fonts. Utilize outras fontes no botão apenas se for necessário para que ele combine com o estilo de sua aplicação. Para sites que usam o botão de login personalizado, é possível carregar a fonte Nunito diretamente do Google Fonts.
