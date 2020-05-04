@@ -4,7 +4,7 @@
 | Escopo                    | Acesso                                                                                                                                                                               |
 |---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | identity:basic:read       | account.id <br/>account.createdAt <br/>account.updatedAt <br/>account.language <br/>account.timezone <br/>account.firstName <br/>account.lastName <br/>account.name                                                     |
-| identity:email:read       | account.email                                                                                                                                                                        |
+| identity:&#8288;email&#8288;:read       | account.email                                                                                                                                                                        |
 | identity:birth:read       | account.avatar                                                                                                                                                                       |
 | identity:cpf:read         | account.birth                                                                                                                                                                        |
 | identity:communities:read | community.community <br/>community.name <br/>community.icon <br/>community.logo <br/>community.language <br/>community.timezone <br/>community.geolocation <br/>community.color <br/>community.createdAt <br/>community.updatedAt |
@@ -31,7 +31,7 @@ Exemplo de url: `https://id.layers.digital/?client_id=layers&redirect_uri=https:
 Todas as chamadas devems ser feitas na seguinte url: `https://api.layers.digital`
 Após o usuário fazer o fluxo de login e aceitar os escopos, será redirecionado para `https://{{redirect_uri}}?code={{code}}`. Com este código de acesso `{{code}}`, será necessário fazer a seguinte requisição:
 
-##### **GET** `/oauth/token`
+##### **POST** `/oauth/token`
 ###### Requisição do tipo FORM URL Encoded:
 ```js
 {
