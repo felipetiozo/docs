@@ -36,7 +36,7 @@ A API deve retornar um JSON com o seguinte formato:
     // Livro de notas individual
     {
       // ID interno do grupo de livro de notas, para possível fetch individual futuro
-      id: "0001",
+      "id": "0001",
     
       // Ano letivo (opcional)
       "season": "2019",
