@@ -1,21 +1,12 @@
 # Layers OAuth 2.0
 
 ### Escopos
-<<<<<<< HEAD
-| Escopo                    | Acesso                                                                                                                                                                                                                            |
-| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| identity:basic:read       | account.id <br/>account.createdAt <br/>account.updatedAt <br/>account.language <br/>account.timezone <br/>account.firstName <br/>account.lastName <br/>account.name                                                               |
-| identity:email:read       | account.email                                                                                                                                                                                                                     |
-| identity:birth:read       | account.avatar                                                                                                                                                                                                                    |
-| identity:cpf:read         | account.birth                                                                                                                                                                                                                     |
-=======
 | Escopo                    | Acesso                                                                                                                                                                               |
 |---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | identity:basic:read       | account.id <br/>account.createdAt <br/>account.updatedAt <br/>account.language <br/>account.timezone <br/>account.firstName <br/>account.lastName <br/>account.name                                                     |
 | identity:&#8288;email&#8288;:read       | account.email                                                                                                                                                                        |
 | identity:birth:read       | account.avatar                                                                                                                                                                       |
 | identity:cpf:read         | account.birth                                                                                                                                                                        |
->>>>>>> b3fc3727f5d6d0f35a7dbd456b000887ba0075d2
 | identity:communities:read | community.community <br/>community.name <br/>community.icon <br/>community.logo <br/>community.language <br/>community.timezone <br/>community.geolocation <br/>community.color <br/>community.createdAt <br/>community.updatedAt |
 | user:enrollments:read     | enrollment.id <br/>enrollment.kind <br/>enrollment.entity <br/>enrollment.group <br/>enrollment.createdAt <br/>enrollment.updatedAt                                                                                               |
 | group:read                | <br/>group.id <br/>group.name <br/>group.alias <br/>group.createdAt <br/>group.updatedAt                                                                                                                                          |
