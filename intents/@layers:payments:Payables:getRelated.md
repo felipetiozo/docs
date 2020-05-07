@@ -17,7 +17,6 @@ Deve haver uma API que recebe uma requisição `POST` com a seguinte estrutura d
     "user": {
       "id": String,  // ID do usuário
       "name": String,  // Nome do usuário
-      "email": String,  // Email do usuário
       "alias": String | Number | null,  // Alias do usuário
     },
   },
