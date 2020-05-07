@@ -10,7 +10,7 @@ Deve haver uma API que recebe uma requisição `POST` com a seguinte estrutura d
 {
   "context": {
     "issuedAt": Date,  // Quando a chamada foi feita
-    "action": '@layers:payments:Payables:getRelated',
+    "action": '@layers:getHomeInfo',
     "community": String,  // Comunidade do usuário
   },
   "data": {
@@ -18,6 +18,9 @@ Deve haver uma API que recebe uma requisição `POST` com a seguinte estrutura d
       "id": String,  // ID do usuário
       "name": String,  // Nome do usuário
       "alias": String | Number | null,  // Alias do usuário
+      "timezone": String,  // Fuso horário do usuário
+      "language": String,  // Língua preferencial do usuário
+      "accountId": String,  // ID da account do usuário
     },
   },
   "secret": String, // Chave secreta

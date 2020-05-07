@@ -17,8 +17,10 @@ Deve haver uma API que recebe uma requisição `POST` com a seguinte estrutura d
     "user": {
       "id": String,  // ID do usuário
       "name": String,  // Nome do usuário
-      "email": String,  // Email do usuário
       "alias": String | Number | null,  // Alias do usuário
+      "timezone": String,  // Fuso horário do usuário
+      "language": String,  // Língua preferencial do usuário
+      "accountId": String,  // ID da account do usuário
     },
   },
   "secret": String, // Chave secreta
@@ -35,6 +37,9 @@ A API deve retornar um JSON com o seguinte formato:
   "result": [
     // Livro de notas individual
     {
+      // ID interno do grupo de livro de notas, para possível fetch individual futuro
+      "id": "0001",
+    
       // Ano letivo (opcional)
       "season": "2019",
 
