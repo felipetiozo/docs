@@ -46,12 +46,10 @@ A API deve retornar um JSON com o seguinte formato:
 ###### Resposta:
 ```js
 {
-{
     "access_token": "{{jwtToken}}",
     "token_type": "Bearer",
     "expires_in": Number // Em quanto tempo irá expirar este token,
     "state": String // Irá retornar o mesmo valor caso tenha sido utilizado na primeira chamada
-}
 }
 ```
 Todos os endpoints abaixos devem ser autenticados da seguinte forma:
