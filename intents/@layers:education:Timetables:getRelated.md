@@ -1,9 +1,12 @@
-Intent @layers:education:Timetables:getRelated
+# Intent `@layers:education:Timetables:getRelated`
+
 Esta intent é usada para obter dados de grade horária para a tela de "Visão de Horários" para um usuário específico.
 
-Deve haver uma API que recebe uma requisição POST com a seguinte estrutura de dados:
+Deve haver uma API que recebe uma requisição `POST` com a seguinte estrutura de dados:
 
-Requisição:
+#### Requisição:
+
+```js
 {
   "context": {
     "issuedAt": Date,  // Quando a chamada foi feita
@@ -22,10 +25,12 @@ Requisição:
   },
   "secret": String, // Chave secreta
 }
+```
+
 A API deve retornar um JSON com o seguinte formato:
 
 Resposta:
-```
+```js
 {
   "result": [
     // Grade horária individual
@@ -79,12 +84,15 @@ Resposta:
   ]
 }
 ```
-Validações que sugerimos:
-secret é idêntica à salva no código? (IMPORTANTE)
-context.community é uma comunidade aceita? (DESEJAVEL)
-context.action é uma action implementada e válida? (IMPORTANTE)
-data.user possui permissão de acesso ao recurso? (OPCIONAL, pois o Layers já aplica regras de escopamento nas telas)
-data.user pertence à context.comunity? (OPCIONAL)
-Obs: Caso algum erro ocorra, retornar códigos HTTP na faixa 4xx-5xx
 
-ATENÇÃO: Os comentários foram adicionados apenas para explicar as estruturas de dados, nem a requisição e nem a resposta devem ter comentários, ambos devem ser JSONs válidos.
+
+### Validações que sugerimos:
+- secret é idêntica à salva no código? (IMPORTANTE)
+- context.community é uma comunidade aceita? (DESEJAVEL)
+- context.action é uma action implementada e válida? (IMPORTANTE)
+- data.user possui permissão de acesso ao recurso? (OPCIONAL, pois o Layers já aplica regras de escopamento nas telas)
+- data.user pertence à context.comunity? (OPCIONAL)
+
+**Obs:** Caso algum erro ocorra, retornar códigos HTTP na faixa 4xx-5xx
+
+**ATENÇÃO:**: Os comentários foram adicionados apenas para explicar as estruturas de dados, nem a requisição e nem a resposta devem ter comentários, ambos devem ser JSONs válidos.
