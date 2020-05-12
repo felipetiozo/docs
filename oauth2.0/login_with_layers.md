@@ -10,23 +10,23 @@ Para ter acesso ao componente do botão logar com o Layers será necessário imp
 ```html
 <!DOCTYPE HTML>
 <html>
-    <title>Minha Pagina</title>
-    <script src="https://js.layers.digital/v1/LayersAuth.js"></script>
+    <head>
+        <title>Minha Pagina</title>
+        <script src="https://js.layers.digital/v1/LayersAuth.js"></script>
+    </head>
 </html>
 ```
 
 ### 2 - Adicione o botão de autenticação do Layers à sua página
 
 ```html
-<html>
-    <layers-auth-button
-        client-id="myapp",
-        scope="identity:basic:read"
-        response-type="code"
-        redirect-uri="https://myapp.com"
-        label="continuar com"
-    ></layers-auth-button>
-</html>
+<layers-auth-button
+    client-id="myapp",
+    scope="identity:basic:read"
+    response-type="code"
+    redirect-uri="https://myapp.com"
+    label="Continuar com"
+></layers-auth-button>
 ```
 
 Uma vez importada a bibioteca, adicione o componente do botão à sua página passando os atributos obrigatórios:
@@ -39,9 +39,9 @@ Existem três valores possíveis para o atributo ```mode```:
     + ```embedded```: Abre um dialog na sua página com a tela de login do Layers para que o usuário digite suas credenciais.
     + ```popup```: Abre um popup em outra janela com a tela de login do Layers para que o usuário digite suas credenciais.
     + ```redirect```: Redireciona o usuário para a tela de login do Layers e depois redireciona de volta para o seu app passando o código como parametro na query.
-+ **redirect-uri**
++ **redirect-uri**:
 Deve conter a url de redirecionamento para o seu app quando for usado o ```mode="redirect"```.
-+ **label**
++ **label**:
 Será usada como texto do botão na forma ```label```+ Layers.
 
 Além dos atributos obrigatórios, estão disponíveis também atributos de estilo para que o botão se adeque ao design na sua página. São eles:
@@ -65,17 +65,15 @@ Caso você tenha optado por usar o modo ```redirect```, não será possível ouv
 Para os modos ```embedded```e ```popup``` o código que deve ser usado para obter o token de acesso do usuário pode ser obtido ouvindo a resposta do evento LayersAuth como mostrado no trecho de código abaixo. 
 
 ```html
-<html>
-    <script>
-        LayersAuth.onResult((error, data) => {
-            if (error) {
-                //handle error
-            }
-            //use code to generate an OAuth token for the user
-            const code = data.code
-        })
-    </script>
-</html>
+  <script>
+      LayersAuth.onResult((error, data) => {
+          if (error) {
+              //handle error
+          }
+          //use code to generate an OAuth token for the user
+          const code = data.code
+      })
+  </script>
 ```
 
 ### 4 - Use o código para obter o token
