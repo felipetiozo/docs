@@ -19,6 +19,7 @@ Uma vez que você tem seu app cadastrado no Layers, para gerar seu token de aute
 {
     "token": 'Bearer ' + seuToken
 }
+```
 
 Esse token deve ser passado na chave ```Authorization``` nos headers para realizar a requisição para a rota de notificação.
 
