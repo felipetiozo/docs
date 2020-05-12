@@ -33,41 +33,51 @@ A API deve retornar um JSON com o seguinte formato:
 
 ```js
 {
-  //Badge de notificações, é um numero inteiro que representa a quantidade de notificações, valores possiveis:
+  //Badge de notificações, é um numero inteiro que representa a quantidade de notificações, valores possiveis: (opcional)
   //Boolean: Se for "true" mostra a badge sem contagem, se for "false" não mostra a badge
   //Number: Se for maior ou igual a 1 mostra a contagem na badge, caso contrario não mostra a badge
-  badge: 1
-  //Informações de destaque
-  featured: {
-    //Titulo do grupo de cards em destaque, limitado a 30 caracteres
-    title: "1 item novo na agenda",
-    //Array de cards que estarão em destaque na home do Layers. Serão renderizados no máximo 4 cards, mesmo que mais sejam enviados
-    cards: [
+  "badge": 1
+
+  //Informações de destaque (opcional)
+  "featured": {
+
+    //Titulo do grupo de cards em destaque, limitado a 30 caracteres (obrigatório)
+    "title": "1 item novo na agenda",
+
+    //Array de cards que estarão em destaque na home do Layers. Serão renderizados no máximo 4 cards, mesmo que mais sejam enviados (obrigatório)
+    "cards": [
       {
-        //Descrição curta do card, limitado a 26 caracteres. Campo obrigatório.
-        label: "Evento",
-        //Titulo do card, limitado a 50 caracteres. Campo obrigatório.
-        title: "Festa junina",
-        //Descrição do card
-        description: "A festa junina será relaizada no dia 12/06/2020, todos estão convidados!",
-        //Personaliza o estilo do card, valores possiveis:
+        //Descrição curta do card, limitado a 26 caracteres. (obrigatório)
+        "label": "Evento",
+
+        //Titulo do card, limitado a 50 caracteres. (obrigatório)
+        "title": "Festa junina",
+
+        //Descrição do card (opcional)
+        "description": "A festa junina será relaizada no dia 12/06/2020, todos estão convidados!",
+
+        //Personaliza o estilo do card, valores possiveis: (opcional)
         //neutral
         //attention
         //success
         //danger
-        mood: "neutral",
-        //Imagem que aparece no card, o apecto ideal é quadrada. Campo opcional
-        image: "https://image.com",
-        //Para onde o clique no card deve redirecionar o usuário
-        action: {
-            //Alvo onde a ação vai ser executada, valores possiveis:
-            //portal: Ação é executada no portal do proprio app dentro do Layers
-            //url: Ação é abrir uma url no navegador
-            target: "portal",
-            //URL que deve ser aberta no navegador. Campo obrigatório caso target seja url
-            url: null,
-            //Parametros que devem ser enviados para o portal. Campo obrigatório caso target seja portal
-            params: "..."
+        "mood": "neutral",
+
+        //Imagem que aparece no card, o apecto ideal é quadrada. (opcional)
+        "image": "https://image.com",
+
+        //Para onde o clique no card deve redirecionar o usuário (obrigatório)
+        "action": {
+          //Alvo onde a ação vai ser executada, valores possiveis: (obrigatório)
+          //portal: Ação é executada no portal do proprio app dentro do Layers
+          //url: Ação é abrir uma url no navegador
+          "target": "portal",
+
+          //URL que deve ser aberta no navegador. Campo obrigatório caso target seja url
+          "url": null,
+
+          //Parametros que devem ser enviados para o portal. Campo obrigatório caso target seja portal
+          "params": "..."
         }
       }
     ]

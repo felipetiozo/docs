@@ -37,14 +37,14 @@ Resposta:
     {
       // ID interno da grade horária (opcional)
       "id": "0001",
-    
+
       // Ano letivo (opcional)
       "season": "2019",
 
       // Nome do estudante (obrigatório)
       "student": "Ivan Seidel Gomes",
 
-      // Nome do curso/série (opcional) 
+      // Nome do curso/série (opcional)
       "course": "9º Ano",
 
       // Dia em que começa a semana (opcional)
@@ -54,7 +54,7 @@ Resposta:
       // Lista de horários
       "schedules": [
         {
-          // Título do horário (atividade, disciplina)
+          // Título do horário (atividade, disciplina) (obrigatório)
           "title": "Língua Portuguesa e os estudos",
 
           // Abreviação do titulo (opcional)
@@ -71,7 +71,7 @@ Resposta:
           "startTime": "15:30:00", // ISO 8601 (obrigatório)
 
           // Horário de fim (opcional)
-          "endTime": "16:30:00", // Formato de HH:ISO 8601 
+          "endTime": "16:30:00", // Formato de HH:ISO 8601
 
           // Localização do horário (opcional)
           "location": "Campus SP, sala 12, bloco B",

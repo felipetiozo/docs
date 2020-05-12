@@ -37,88 +37,89 @@ A API deve retornar um JSON com o seguinte formato:
   "result": [
   // Grupo de cobranças
   {
-    
-    // ID interno do grupo de cobranças, para possível fetch individual futuro
+
+    // ID interno do grupo de cobranças, para possível fetch individual futuro (obrigatório)
     id: "RA",
-    
-    // Título do grupo de cobranças. Pode ser o nome do aluno, ou como preferirem que apareça este "grupo"
+
+    // Título do grupo de cobranças. Pode ser o nome do aluno, ou como preferirem que apareça este "grupo" (obrigatório)
     title: "Aluno Munir Seduca",
-    
-    // Descrição do grupo de cobranças (aceita Quebras de linha)
+
+    // Descrição do grupo de cobranças (aceita Quebras de linha) (opcional)
     description: "Responsável Financeiro: ...\n...",
-    
-    // Qual é o número total de parcelas (por padrão, será a contagem de payables)
+
+    // Qual é o número total de parcelas (por padrão, será a contagem de payables) (opcional)
     installments: 12,
-    
-    // Lista de cobranças que fazem parte desse grupo
+
+    // Lista de cobranças que fazem parte desse grupo (obrigatório)
     payables: [
       {
-    
-        // ID interno da cobrança no ERP, para possível futura integração
+
+        // ID interno da cobrança no ERP, para possível futura integração (obrigatório)
         id: "ID_DA_COBRANÇA",
-    
-        // Identificador personalizado da cobrança (opcional, será vísivel na Interface)
+
+        // Identificador personalizado da cobrança, será vísivel na interface (opcional)
         alias: "3213",
-    
-        // Qual é o número da parcela dessa cobrança?
+
+        // Qual é o número da parcela dessa cobrança? (obrigatório)
         installment: 1,
-    
-        // Descrição da cobrança (aceita markdown)
+
+        // Descrição da cobrança (aceita markdown) (opcional)
         description: "Mensalidade referente ao mês de Janeiro de 2020",
-    
-        // Status da cobrança, valores possíveis: 
+
+        // Status da cobrança, valores possíveis: (obrigatório)
         // paid: Pago
         // partially_paid: Parcialmente Pago
         // pending: Aguardando Pagamento
         // open: Em Aberto
         // canceled: Cancelado
-        // late: Atrasado 
+        // late: Atrasado
         status: "pending",
-    
-        // Data de vencimento da cobrança (formato AAAA-MM-DD)
+
+        // Data de vencimento da cobrança (formato AAAA-MM-DD) (obrigatório)
         dueAt: "2020-02-01",
-    
-        // Quando a cobrança foi paga (opcional. formato AAAA-MM-DD)
+
+        // Quando a cobrança foi paga, formato AAAA-MM-DD (opcional)
         paidAt: null,
-    
-        // Quando a cobrança foi enviada (opcional. formato AAAA-MM-DD)
+
+        // Quando a cobrança foi enviada,formato AAAA-MM-DD (opcional)
         sentAt: null,
-    
-        // Valor que já foi pago
+
+        // Valor que já foi pago (obrigatório)
         centsPaid: 0,
-    
-        // Valor total a ser pago (com multas/taxas, se aplicável)
+
+        // Valor total a ser pago (com multas/taxas, se aplicável) (obrigatório)
         centsTotal: 150000,
-    
-        // Valor original (sem multas/taxas)
+
+        // Valor original (sem multas/taxas) (obrigatório)
         centsOriginal: 150000,
-    
+
+        // Arquivo e código do boleto (obrigatório)
         boleto: {
-    
-          // Link para baixar o boleto
+
+          // Link para baixar o boleto (obrigatório)
           link: "https://boleto.pdf", //URL,
-    
-          // Linha digitável do boleto, será usada para o usuário copiar o código sem ter que baixar o boleto
+
+          // Linha digitável do boleto, será usada para o usuário copiar o código sem ter que baixar o boleto (obrigatório)
           code: "12341234123412341234",
         },
-    
+
         // Lista de anexos da cobrança (opcional)
         attachments: [
           {
-    
-            // Tipo do anexo
+
+            // Tipo do anexo (obrigatório)
             // Valores possivels:
             // invoice: Nota fiscal
             // file: Arquivo
             kind: 'file',
-    
-            // Nome do anexo
+
+            // Nome do anexo (obrigatório)
             title: "Comprovante de estorno",
-    
-            // Descrição do anexo
+
+            // Descrição do anexo (opcional)
             description: "Estorno realizado em 31/10/2019",
-    
-            // Link para baixar o anexo
+
+            // Link para baixar o anexo (obrigatório)
             url: "https://url.para-download.com",
           },
         ]
