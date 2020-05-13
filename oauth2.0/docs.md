@@ -3,14 +3,14 @@
 ### Escopos
 | Escopo                    | Acesso                                                                                                                                                                               |
 |---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| identity:basic:read       | account.id <br/>account.createdAt <br/>account.updatedAt <br/>account.language <br/>account.timezone <br/>account.firstName <br/>account.lastName <br/>account.name                                                     |
-| identity:&#8288;email&#8288;:read       | account.email                                                                                                                                                                        |
-| identity:birth:read       | account.avatar                                                                                                                                                                       |
-| identity:cpf:read         | account.birth                                                                                                                                                                        |
-| identity:communities:read | community.community <br/>community.name <br/>community.icon <br/>community.logo <br/>community.language <br/>community.timezone <br/>community.geolocation <br/>community.color <br/>community.createdAt <br/>community.updatedAt |
-| user:enrollments:read     | enrollment.id <br/>enrollment.kind <br/>enrollment.entity <br/>enrollment.group <br/>enrollment.createdAt <br/>enrollment.updatedAt                                                                                               |
-| group:read                | <br/>group.id <br/>group.name <br/>group.alias <br/>group.createdAt <br/>group.updatedAt                                                                                                                                          |
-| user:members:read         | member.id <br/>member.alias <br/>member.name <br/>member.createdAt <br/>member.updatedAt                                                                                                                                          |
+| openid       | account.id                                                     |
+| profile       | account.createdAt <br/>account.updatedAt <br/>account.language <br/>account.timezone <br/>account.firstName                                                                                                                                                                        |
+| fullname       | account.name                                                                                                                                                                       |
+| email         | account.email                                                                                                                                                                        |
+| related.communities | community.community <br/>community.name <br/>community.icon <br/>community.logo <br/>community.language <br/>community.timezone <br/>community.geolocation <br/>community.color <br/>community.createdAt <br/>community.updatedAt <br/>user.lastSeenAt <br/>user.id <br/>user.createdAt <br/>user.updatedAt <br/>user.alias <br/>user.roles <br/>user.permissions |
+| related.groups     | group.id <br/>group.name <br/>group.alias <br/>group.createdAt <br/>group.updatedAt <br/>group.enrollment.id <br/>group.enrollment.kind <br/>group.enrollment.entity <br/>group.enrollment.group <br/>group.enrollment.createdAt <br/>group.enrollment.updatedAt                                                                                               |
+| related.members                | <br/>member.name <br/>member.createdAt <br/>member.updatedAt                                                                                                                                          |
+| related.members.groups         | groups.id <br/>groups.name <br/>groups.alias <br/>groups.createdAt <br/>groups.updatedAt <br/>groups.enrollment.id <br/>groups.enrollment.kind <br/>groups.enrollment.entity <br/>groups.enrollment.group <br/>groups.enrollment.createdAt <br/>groups.enrollment.updatedAt                                                                                                                                          |
 
 ### Client-side
 
@@ -60,8 +60,9 @@ Authorization: 'Bearer {{jwtToken}}'
 
 ### Endpoints
 
-##### **GET** `/v1/oauth/account`
-Retorna os detalhes de uma conta
+##### **GET** `/v1/oauth/account/info`
+Retorna os detalhes de uma conta e suas comunidades
+Caso utilize mais de um item na chave `includes`, é necessário separar por vírgulas
 ###### A API deve retornar um JSON com o seguinte formato:
 ###### Resposta:
 ```js
@@ -74,69 +75,85 @@ Retorna os detalhes de uma conta
     "lastName": String, // Último nome
     "name": String, // Nome completo
     "timezone": String // Timezone principal da conta",
-    "updatedAt": String // Última data de atualização da conta
+    "updatedAt": String // Última data de atualização da conta,
+    "communities": [ // Incluir "includes=communities" na querystring para ter acesso
+        {
+            "color": String, // Cor principal da comunidade
+            "community": String, // Identificador único
+            "icon": String, // Logo
+            "name": String // Nome
+        }
+    ]
 }
 ```
 
-##### **GET** `/v1/oauth/communities`
-Retorna os detalhes de uma comunidade
-###### A API deve retornar um JSON com o seguinte formato:
-###### Resposta:
-```js
-[
-    {
-        "color": String, // Cor principal da comunidade
-        "community": String, // Identificador único
-        "icon": String, // Logo
-        "name": String // Nome
-    },
-]
-```
-
-##### **GET** `/v1/oauth/members?_community={{community}}`
-Retorna os membros de uma comunidade vinculados a conta
-###### A API deve retornar um JSON com o seguinte formato:
-###### Resposta:
-```js
-[
-    {
-        "alias": String, // Identificador do membro na comunidade
-        "createdAt": Date, // Data de criação do membro
-        "id": String, // Identificador único
-        "name": String, // Nome
-        "updatedAt": Date // Última data de atualização do membro
-    }
-]
-```
-
-##### **GET** `/v1/oauth/members/{{memberId}}/enrollments?_community={{community}}`
-Retorna os vínculos de membro/turma de um determinado membro
-###### A API deve retornar um JSON com o seguinte formato:
-###### Resposta:
-```js
-[
-    {
-        "createdAt": String, // Data de criação do vínculo
-        "entity": String, // Identificador único do membro
-        "group": String, // Identificador único do grupo
-        "id": String, // Identificador único do vínculo
-        "kind": String, // Tipo do vínculo [member,user]
-        "updatedAt": Date // Última data de atualização do vínculo
-    },
-]
-```
-
-##### **GET** `/v1/oauth/groups/{{groupId}}?_community={{community}}`
-Retorna os detalhes de um determinado grupo
+##### **GET** `/v1/oauth/user/info?_community={{community}}`
+Retorna os detalhes de um usuário, turmas e alunos
+Caso utilize mais de um item na chave `includes`, é necessário separar por vírgulas
 ###### A API deve retornar um JSON com o seguinte formato:
 ###### Resposta:
 ```js
 {
-    "alias": String, // Identificador do grupo dentro da comunidade
-    "createdAt": String, // Data de criação do grupo
-    "id": String, // Identificador único do grupo
-    "name": String, // Nome
-    "updatedAt": Date // Última data de atualização do grupo
+    "user": { // Incluir "includes=user" na querystring para ter acesso
+        "lastSeenAt": Date, // Última visualização do usuário
+        "id": String, // Identificador único
+        "createdAt": Date, // Data de criação do usuário
+        "updatedAt": Date, // Última data de atualização do usuário
+        "alias": String, // Identificador do usuário na comunidade
+        "roles": String, // Papéis do usuário na comunidade
+        "permissions": String // Permissões do usuário na comunidade
+    },
+    "community": { // Incluir "includes=community" na querystring para ter acesso
+        "color": String, // Cor principal da comunidade
+        "community": String, // Identificador único
+        "icon": String, // Logo
+        "name": String, // Nome
+    }
+    "groups": [ // Incluir "includes=groups" na querystring para ter acesso
+        {
+            "id": String, // Identificador único do grupo
+            "name": String, // Nome do grupo
+            "alias": String, // Identificador do grupo
+            "createdAt": Date, // Data de criação do grupo
+            "updatedAt": Date, // Última data de atualização do grupo,
+            "season": String, // Período escolar da turma
+            "enrollment": { // Incluir "includes=groups.enrollment" na querystring para ter acesso
+                "id": String, // Identificador único da mátricula
+                "kind": String, // Tipo da mátricula
+                "entity": String, // Identificador da entidade mátriculada
+                "group": String, // Identificador do grupo da mátricula
+                "createdAt": Date, // Data de criação da mátricula
+                "updatedAt": Date // Última data de atualização da mátricula
+            }
+        }
+    ],
+    "members": [ // Incluir "includes=members" na querystring para ter acesso
+        {
+            "name": String, // Nome do aluno
+            "createdAt": String, // Data de criação do aluno
+            "updatedAt": String, // Última data de atualização do aluno
+            "alias": String, // Identificador do aluno
+            "id": String // Identificador único do aluno,
+            "groups": [ // Incluir "includes=members.groups" na querystring para ter acesso
+                {
+                    "id": String, // Identificador único do grupo
+                    "name": String, // Nome do grupo
+                    "alias": String, // Identificador do grupo
+                    "createdAt": Date, // Data de criação do grupo
+                    "updatedAt": Date, // Última data de atualização do grupo,
+                    "season": String, // Período escolar da turma
+                    "enrollment": { // Incluir "includes=members.groups.enrollment" na querystring para ter acesso
+                        "id": String, // Identificador único da mátricula
+                        "kind": String, // Tipo da mátricula
+                        "entity": String, // Identificador da entidade mátriculada
+                        "group": String, // Identificador do grupo da mátricula
+                        "createdAt": Date, // Data de criação da mátricula
+                        "updatedAt": Date // Última data de atualização da mátricula
+                    }
+                }
+            ]
+        }
+    ]
 }
 ```
 
