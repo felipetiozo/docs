@@ -4,11 +4,7 @@
 
 A automatização da criação de tarefas na agenda por meio da API com a rota de `/post`  pode ser feito seguindo o passoa passo abaixo.
 
-### 1 - Crie um token de autenticação
-
-Todas as rotas da API do Layers Education exigem autenticação para que seja garantida sua segurança. Desse modo, para realizar uma requisição para a rota de fazer publicações2 você deve ter um token. Caso ainda não tenha cadastrado seu app ou não tenha um token, siga esse [tutorial](https://github.com/layers-digital/docs/blob/master/articles/app_register.md).
-
-### 2 - Monte o conteúdo do seu post
+### 1 - Monte o conteúdo do seu post
 
 A payload da criação de uma tarefa pode ser vista abaixo. Cada um dos campos está expicado abaixo do exemplo de código.
 
@@ -42,6 +38,6 @@ A payload da criação de uma tarefa pode ser vista abaixo. Cada um dos campos e
 + **targets**: Público alvo da publicação. Array contento objetos com a string ```id``` com o identificador de um membro, usuário, grupo ou tag e a string ```type``` contendo o tipo dessa entidade. Nesse caso, o público alvo são os Familiares ou Alunos que estão vinculados com o grupo de id_exemplo/
 + **event**: Objeto contendo o booleano ```allDay``` indicando se o evento deve durar o dia todo e a string ```endDate``` com a data de final do evento.
 
-### 3 - Envie sua publicação
+### 2 - Envie sua publicação
 
 Com as informações da publicação já configuradas de acordo com o modelo acima, envie sua publicação fazendo uma requisição do tipo **POST** para `/post` de acordo com os headers explicados [aqui](link.com). Essa requisição retornará o documento da sua publicação. 
