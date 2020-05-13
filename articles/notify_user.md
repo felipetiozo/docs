@@ -32,7 +32,7 @@ Existem duas formas de escolher o público que deve receber uma notificação: p
 ```
 
 ##### POST `/communication/notify`
-###### Payload usando o array de userIds
+###### Payload usando o array de targets
 ```js
 {
     "title": "título da notificação",
