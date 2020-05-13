@@ -22,7 +22,7 @@ A payload da criação de uma tarefa pode ser vista abaixo. Cada um dos campos e
       viewAt: '2020-05-22T18:00:00.000Z',
       targets: [
         {
-            _id: 'id_exemplo',
+            id: 'id_exemplo',
             type: 'group'
         }
       ],
