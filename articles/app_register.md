@@ -6,7 +6,7 @@ Todas as rotas da API do Layers Education exigem autenticação para que seja ga
 
 Antes de gerar seu token queremos conhecer seu app! Entre em contato conosco através do e-mail suporte@layers.education falando um pouco sobre seu app no Layers. A partir desse e-mail entraremos em contato com você para entendermos melhor como podemos ajudar para que o seu app tenha acesso a todas as funcionalidades que ele precisa. Além disso, será a partir dessa comunicação que cadastraremos seu app para que ele possa gerar um token.
 
-###2 - Gere um token de autenticação para o seu app
+### 2 - Gere um token de autenticação para o seu app
 
 Uma vez que você tem seu app cadastrado no Layers, para gerar seu token de autenticação você deve fazer uma requisição como mostrado abaixo:
 
