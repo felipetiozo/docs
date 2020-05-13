@@ -7,21 +7,9 @@
 
 > **Atenção**: para realizar esse procedimento é necessário ter permissão ```notification:send```
 
-### 1 - Cadastre seu app e crie token para o seu app de sincronização
+### 1 - Crie token para o seu app de sincronização
 
-Todas as rotas da API do Layers Education exigem autenticação para que seja garantida sua segurança. Desse modo, para realizar uma requisição para a rota de sync será necessário que sua aplicação passe nos headers a chave "Authorization" com seu token. Caso você ainda não tenha um app cadastrado, entre em contato conosco para realizar esse cadastro. 
-
-Uma vez que você tem seu app cadastrado no Layers, para gerar seu token de autenticação você deve fazer uma requisição como mostrado abaixo:
-
-##### **GET** `/appmaker/apps/:appId/token`
-###### resposta
-```js
-{
-    "token": 'Bearer ' + seuToken
-}
-```
-
-Esse token deve ser passado na chave ```Authorization``` nos headers para realizar a requisição para a rota de notificação.
+Todas as rotas da API do Layers Education exigem autenticação para que seja garantida sua segurança. Desse modo, para realizar uma requisição para a rota de notificação você deve ter um token. Caso ainda não tenha cadastrado seu app ou não tenha um token, siga esse [tutorial](https://github.com/layers-digital/docs/blob/master/articles/app_register.md).
 
 ### 2 - Faça a requisição para a rota de notificação
 
