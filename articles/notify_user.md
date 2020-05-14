@@ -12,43 +12,28 @@
 O corpo da requisição segue o seguinte formato:
 
 ##### POST `/notification/send`
-```js
-{
-    // Título principal da notificação
+```js{
     "title": "Título da notificação",
-
-    // Descrição da notificação
-    "body": "Texto do corpo da notificação",
-
-    // Públicos para enviar a notificação. Pode ser uma lista com múltiplos tipos
-    "targets": [{
-        // Tipo do tópico, pode ser: user, member, group ou tag
-        "kind": "member",
-        
-        // Referência externa do user/member/group/tag
-        "alias": "alias"
-    }, {
-        // Exemplo de Envio para um grupo
-        "kind": "group",
-        
-        // Identificador do user/member/group/tag no Layers
-        "id": "id"
-    }, {
-        // Exemplo de Envio para um usuário
-        "kind": "user",
-        
-        // Email do user
-        "email": "email@escola.com.br" // 'email' do user
-    }]
-
-    // Permissões que serão notificadas (pode ser omitida caso os todos os targets tenham `"kind": "user"`)
-    "roles": ["guardian"], 
+    "body": "Texto do corpo da notificação"
+    "target": {
+        "topics": [{
+            "alias": "alias" // 'alias' do user/member/group/tag
+            "kind": "member" // Tipo do target, pode ser: user, member, group ou tag
+        }, {
+            "id": "id" // 'id' do user/member/group/tag no Layers
+            "kind": "group"
+        }, {
+            "email": "email@escola.com.br(opens in new tab)" // 'email' do user
+            "kind": "user"
+        }],
+        "roles": ["guardian"], // Permissões que serão notificadas (pode ser omitida caso os todos os targets tenham `"kind": "user"`)
+    }
 }
 ```
 
-A chave `targets` recebe um Array de objetos com as seguintes chaves:
+A chave `target.topics` recebe um Array de objetos com as seguintes chaves:
 
 * `kind`: Indica o tipo do target, pode ser `user`, `member`, `group` ou `tag`
-* `alias` | `id` | `email`: Indica o identificador do target. **Obs.: Informe apenas uma destas chaves por target.**
+* `alias` | `id` | `email`: Indica o identificador do target. **Obs.: Informe apenas uma destas chaves por topic.**
 
-> **Obs.:** A chave `roles` pode ser omitida caso todos os `targets` tenham `"kind": "user"`.
+> **Obs.:** A chave `target.roles` pode ser omitida caso todos os `topics` tenham `"kind": "user"`.
