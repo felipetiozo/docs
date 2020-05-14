@@ -49,7 +49,7 @@ Resposta:
 
       // Dia em que começa a semana (opcional)
       // Valores aceitos: "sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"
-      "startWeekday": "monday" // default: "sunday"
+      "startWeekday": "monday", // default: "sunday"
 
       // Lista de horários
       "schedules": [
