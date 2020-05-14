@@ -3,56 +3,36 @@
 
 ### Introdução
 
-É possível enviar notificações personalizadas através da API do Layers para dispositivos android, IOS e também na plataforma web. Para enviar uma notificação, siga os passos abaixo.
-
-> **Atenção**: para realizar esse procedimento é necessário ter permissão ```notification:send```
+É possível enviar notificações personalizadas através da API do Layers para dispositivos Android, iOS e também na plataforma web.
 
 ### Faça a requisição para a rota de notificação
 
-Existem duas formas de escolher o público que deve receber uma notificação: passar a chave ```userIds``` com os ids dos usuários que devem ser notificados em um array ou passar a chave ```targets``` contendo um lista de objetos e a chave ```roles``` contendo quais permissões um usuário que se encaixe nos targets deve ter para receber aquela notificação.
+> **Atenção**: para realizar esse procedimento é necessário ter permissão `notification:send`
 
-##### POST `/communication/notify`
-###### Payload usando o array de userIds
+O corpo da requisição segue o seguinte formato:
+
+##### POST `/notification/send`
 ```js
 {
-    "title": "título da notifícação",
-    "body": "texto do corpo da notificação",
-    "userIds": ["id", "id", "id"], //IDs dos usuários a serem notificados
-    "data": {
-        "action": "goTo" //ação quando a notificação for clicada
-        "payload": {
-            "location": "groups"
-        }
-    }
-}
-```
-
-##### POST `/communication/notify`
-###### Payload usando o array de targets
-```js
-{
-    "title": "título da notificação",
-    "body": "texto do corpo da notificação"
+    "title": "Título da notificação",
+    "body": "Texto do corpo da notificação"
     "targets": [{
-        "id": "id" //id do membro, grupo, usuário ou tag
-        "kind": "member" //tipo do documento cujo id está na chave _id
+        "alias": "alias" // 'alias' do user/member/group/tag
+        "kind": "member" // Tipo do target, pode ser: user, member, group ou tag
+    }, {
+        "id": "id" // 'id' do user/member/group/tag no Layers
+        "kind": "group"
+    }, {
+        "email": "email@escola.com.br" // 'email' do user
+        "kind": "user"
     }]
-    "roles": ["guardian"], //permissões que serão notificadas
-    "data": {
-        "action": "goTo" //ação quando a notificação for clicada
-        "payload": {
-            "location": "groups"
-        }
-    }
+    "roles": ["guardian"], // Permissões que serão notificadas (pode ser omitida caso os todos os targets tenham `"kind": "user"`)
 }
 ```
 
+A chave `targets` recebe um Array de objetos com as seguintes chaves:
 
-###### Resposta
+* `kind`: Indica o tipo do target, pode ser `user`, `member`, `group` ou `tag`
+* `alias` | `id` | `email`: Indica o identificador do target. **Obs.: Informe apenas uma destas chaves por target.**
 
-```js
-{
-    "success": 10, //Número de dispositivos notificados
-    "failure": 0 //Número de dispositivos para os quais a notificação falhou
-}
-```
+> **Obs.:** A chave `roles` pode ser omitida caso todos os `targets` tenham `"kind": "user"`.
