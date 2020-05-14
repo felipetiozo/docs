@@ -14,19 +14,35 @@ O corpo da requisição segue o seguinte formato:
 ##### POST `/notification/send`
 ```js
 {
+    // Título principal da notificação
     "title": "Título da notificação",
-    "body": "Texto do corpo da notificação"
+
+    // Descrição da notificação
+    "body": "Texto do corpo da notificação",
+
+    // Públicos para enviar a notificação. Pode ser uma lista com múltiplos tipos
     "targets": [{
-        "alias": "alias" // 'alias' do user/member/group/tag
-        "kind": "member" // Tipo do target, pode ser: user, member, group ou tag
+        // Tipo do tópico, pode ser: user, member, group ou tag
+        "kind": "member",
+        
+        // Referência externa do user/member/group/tag
+        "alias": "alias"
     }, {
-        "id": "id" // 'id' do user/member/group/tag no Layers
-        "kind": "group"
+        // Exemplo de Envio para um grupo
+        "kind": "group",
+        
+        // Identificador do user/member/group/tag no Layers
+        "id": "id"
     }, {
+        // Exemplo de Envio para um usuário
+        "kind": "user",
+        
+        // Email do user
         "email": "email@escola.com.br" // 'email' do user
-        "kind": "user"
     }]
-    "roles": ["guardian"], // Permissões que serão notificadas (pode ser omitida caso os todos os targets tenham `"kind": "user"`)
+
+    // Permissões que serão notificadas (pode ser omitida caso os todos os targets tenham `"kind": "user"`)
+    "roles": ["guardian"], 
 }
 ```
 
