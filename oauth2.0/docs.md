@@ -94,7 +94,7 @@ Caso utilize mais de um item na chave `includes`, é necessário separar por ví
 ###### Resposta:
 ```js
 {
-    "user": { // Incluir "includes=user" na querystring para ter acesso
+    "user": {
         "lastSeenAt": Date, // Última visualização do usuário
         "id": String, // Identificador único
         "createdAt": Date, // Data de criação do usuário
