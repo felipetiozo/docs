@@ -2,7 +2,7 @@
 
 ### Introdução
 
-A automatização da criação de tarefas na agenda por meio da API com a rota de `/post`  pode ser feito seguindo o passoa passo abaixo.
+A automatização da criação de tarefas na agenda por meio da API com a rota de `/post`  pode ser feito seguindo o passo a passo abaixo.
 
 ### 1 - Monte o conteúdo do seu post
 
