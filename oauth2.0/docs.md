@@ -24,7 +24,7 @@ O cliente deverá abrir a seguinte url `https://id.layers.digital`, passando os 
 | scope         | Escopos configurados anteriormente (deve ser indentado com espaços) |
 | state         | Mensagem adicional que pode ser utilizada para ser retornado na rota de token de acesso (OPCIONAL) |
 
-Exemplo de url: `https://id.layers.digital/?client_id=layers&redirect_uri=https://layers.com&response_type=code&scope=identity:basic:read identity:email:read identity:communities:read user:members:read user:enrollments:read group:read`
+Exemplo de url: `https://id.layers.digital/?client_id=layers&redirect_uri=https://layers.com&response_type=code&scope=openid profile fullname`
 
 [Melhores práticas de OAuth com Layers Education](https://github.com/layers-digital/docs/blob/master/oauth2.0/best_practices.md)
 
