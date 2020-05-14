@@ -12,7 +12,8 @@
 O corpo da requisição segue o seguinte formato:
 
 ##### POST `/notification/send`
-```js{
+```js
+{
     "title": "Título da notificação",
     "body": "Texto do corpo da notificação"
     "target": {
