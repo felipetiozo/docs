@@ -9,22 +9,23 @@ A automatização da criação de tarefas na agenda por meio da API com a rota d
 A payload da criação de uma tarefa pode ser vista abaixo. Cada um dos campos está expicado abaixo do exemplo de código.
 
 ```js
+// POST /post
 {
-      type: 'event',
-      title: 'título da publicação',
-      text: 'texto do corpo da publicação',
-      roles: ['student', 'guardian'],
-      date: '2020-05-13T18:00:00.000Z',
-      viewAt: '2020-05-22T18:00:00.000Z',
-      targets: [
+      "type": "event",
+      "title": "título da publicação",
+      "text": "texto do corpo da publicação",
+      "roles": ["student", "guardian"],
+      "date": "2020-05-13T18:00:00.000Z",
+      "viewAt": "2020-05-22T18:00:00.000Z",
+      "targets": [
         {
-            id: 'id_exemplo',
-            type: 'group'
+            "id": "id_exemplo",
+            "type": "group"
         }
       ],
-      event: {
-          allDay: false,
-          endDate: '2020-05-13T23:59:59.999Z',
+      "event": {
+          "allDay": false,
+          "endDate": "2020-05-13T23:59:59.999Z",
       }
 }
 ```
@@ -41,3 +42,17 @@ A payload da criação de uma tarefa pode ser vista abaixo. Cada um dos campos e
 ### 2 - Envie sua publicação
 
 Com as informações da publicação já configuradas de acordo com o modelo acima, envie sua publicação fazendo uma requisição do tipo **POST** para `/post` de acordo com os headers explicados [aqui](link.com). Essa requisição retornará o documento da sua publicação. 
+
+### 3 - Editando sua publicação
+
+É possível editar uma publicação fazendo uma requisição **PUT** para `/post/{{ postId }}`, onde `postId` é o ID da publicação que é retornado no momento de sua criação, na chave `id`, o corpo da requisição deve conter os dados a serem modificados, por exemplo:
+
+Editando o título e o texto de uma publicação:
+
+```js
+// PUT /post/:postId
+{
+      "title": "Título novo",
+      "text": "Texto novo"
+}
+```
