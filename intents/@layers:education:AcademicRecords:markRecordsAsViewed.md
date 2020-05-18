@@ -1,6 +1,6 @@
-# Intent `@layers:education:GradeBooks:getRelated`
+# Intent `@layers:education:AcademicRecords:getRelated`
 
-Esta intent é usada para obter dados de notas para a tela de "Notas" para um usuário específico.
+Esta intent é usada para marcar uma ou mais ocorrências como lidas.
 
 Deve haver uma API que recebe uma requisição `POST` com a seguinte estrutura de dados:
 
