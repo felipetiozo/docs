@@ -38,43 +38,69 @@ Resposta:
       // ID interno da grade horária (opcional)
       "id": "0001",
 
-      // Nome do estudante (obrigatório)
-      "name": "Calendário acadêmico",
+      // Titulo do calendário (obrigatório)
+      "summary": "Calendário acadêmico",
 
-      // Intervalo de tempo do calendário
-      "season": {
-        // Data de inicio do calendário - Formato AAAA-MM-DD
-        "dtstart": "2020-01-01",
-        // Data de fim do calendário - Formato AAAA-MM-DD
-        "dtend": "2020-12-31"
-      },
+      // Descrição do calendário (opcional)
+      "description": "Calendário acadêmico geral"
+
+      // Timezone global, será utilizada caso as datas do evento possuam time e não possuam timezone || UTC
+      "timezone": "America/Sao_Paulo"
 
       // Eventos do calendário (obrigatório)
       "events": [
         {
+          "id": "0001",
+          // Para representar um evento que ocupa o dia todo basta enviar apenas ANO-MES-DIA
+          "summary": "Corpus Christi"
+          // Data de inicio e de final devem ser iguais neste caso - Formato AAAA-MM-DD
+          "start": "2020-06-11",
+          "end": "2020-06-11",
+          "category": "Feriados"
+        },
+        {
+          "id": "0002",
+          // Para representar um evento que ocupa varios dias basta enviar apenas ANO-MES-DIA
+          "summary": "Férias escolares"
+          "start": "2020-06-01",
+          "end": "2020-06-30",
+          "category": "Ferias"
+        },
+        {
+          // ID interno do evento (opcional)
+          "id": "0003",
           // Nome do evento (obrigatório)
-          "name": "Festa junina"
-          // Data de inicio do evento - Formato AAAA-MM-DDTHH:mm:ssZ (ISO 8601) (obrigatório)
-          "dtstart": "2020-07-27T09:00:00Z",
-          // Data de final do evento - Formato AAAA-MM-DDTHH:mm:ssZ (ISO 8601) (obrigatório)
-          "dtend": "2020-07-27T21:45:00Z",
+          "summary": "Festa de halloween"
+          // Data/hora de inicio do evento - Formato AAAA-MM-DDTHH:mm:ss (obrigatório)
+          "start": "2020-10-31T09:00:00",
+          // Data de final do evento - Formato AAAA-MM-DDTHH:mm:ss (obrigatório)
+          "end": "2020-10-31T21:45:00",
           // Categoria do evento (opcional)
           "category": "Eventos"
         },
         {
-          // Para representar um evento que ocupa o dia todo basta enviar apenas ANO-MES-DIA
-          "name": "Corpus Christi"
-          // Data de inicio e de final devem ser iguais neste caso - Formato AAAA-MM-DD
-          "dtstart": "2020-06-11",
-          "dtend": "2020-06-11",
-          "category": "Feriados"
+          // ID interno do evento (opcional)
+          "id": "0004",
+          // Nome do evento (obrigatório)
+          "summary": "Festa junina"
+          // Data/hora de inicio do evento - Formato AAAA-MM-DDTHH:mm:ssZ (obrigatório)
+          "start": "2020-07-27T09:00:00Z",
+          // Data de final do evento - Formato AAAA-MM-DDTHH:mm:ssZ (obrigatório)
+          "end": "2020-07-27T21:45:00Z",
+          // Categoria do evento (opcional)
+          "category": "Eventos"
         },
         {
-          // Para representar um evento que ocupa varios dias basta enviar apenas ANO-MES-DIA
-          "name": "Férias escolares"
-          "dtstart": "2020-06-01",
-          "dtend": "2020-06-30",
-          "category": "Ferias"
+          // ID interno do evento (opcional)
+          "id": "0005",
+          // Nome do evento (obrigatório)
+          "summary": "Natal"
+          // Data/hora de inicio do evento - Formato AAAA-MM-DD (obrigatório)
+          "start": "2020-31-12",
+          // Data de final do evento - Formato AAAA-MM-DD (obrigatório)
+          "end": "2020-31-12",
+          // Cor do evento (opcional)
+          "color": "orange"
         }
       ],
 
@@ -88,7 +114,7 @@ Resposta:
           // Cor que será atribuida a todos os eventos desta categoria (obrigatório)
           // Cores disponiveis:
           // TODO
-          "color": "Blue"
+          "color": "blue"
         },
         {
           "name": "Feriados",
