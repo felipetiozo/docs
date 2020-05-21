@@ -1,4 +1,4 @@
-# Intent `@layers:education:Calendar:getRelated`
+# Intent `@layers:Calendar:getRelated`
 
 Esta intent é usada para obter dados de calendário para um usuário específico.
 
@@ -10,7 +10,7 @@ Deve haver uma API que recebe uma requisição `POST` com a seguinte estrutura d
 {
   "context": {
     "issuedAt": Date,  // Quando a chamada foi feita
-    "action": "@layers:education:Calendar:getRelated",
+    "action": "@layers:Calendar:getRelated",
     "community": String,  // Comunidade do usuário
   },
   "data": {
