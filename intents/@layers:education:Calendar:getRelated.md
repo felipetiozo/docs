@@ -42,35 +42,51 @@ Resposta:
       "summary": "Calendário acadêmico",
 
       // Descrição do calendário (opcional)
-      "description": "Calendário acadêmico geral"
+      "description": "Calendário acadêmico geral",
 
       // Timezone global, será utilizada caso as datas do evento possuam time e não possuam timezone || UTC
-      "timezone": "America/Sao_Paulo"
+      "timezone": "America/Sao_Paulo",
 
       // Eventos do calendário (obrigatório)
       "events": [
         {
+          // ID interno do evento (opcional)
           "id": "0001",
-          // Para representar um evento que ocupa o dia todo basta enviar apenas ANO-MES-DIA
-          "summary": "Corpus Christi"
-          // Data de inicio e de final devem ser iguais neste caso - Formato AAAA-MM-DD
-          "start": "2020-06-11",
-          "end": "2020-06-11",
-          "category": "Feriados"
+          // Nome do evento (obrigatório)
+          "summary": "Natal",
+          // Data/hora de inicio do evento - Formato AAAA-MM-DD (obrigatório)
+          "start": "2020-31-12",
+          // Data de final do evento - Formato AAAA-MM-DD (obrigatório)
+          "end": "2020-31-12",
+          // Categoria do evento (opcional)
+          "category": "Eventos",
+          // Cor do evento (opcional)
+          "color": "orange"
         },
         {
           "id": "0002",
+          // Para representar um evento que ocupa o dia todo basta enviar apenas ANO-MES-DIA
+          "summary": "Corpus Christi",
+          // Data de inicio e de final devem ser iguais neste caso - Formato AAAA-MM-DD
+          "start": "2020-06-11",
+          "end": "2020-06-11",
+          "category": "Feriados",
+          // Data/hora que o evento foi criado - Formato AAAA-MM-DDTHH:mm:ssZ (opcional)
+          "createdAt": "2020-01-01T13:45:00Z"
+        },
+        {
+          "id": "0003",
           // Para representar um evento que ocupa varios dias basta enviar apenas ANO-MES-DIA
-          "summary": "Férias escolares"
+          "summary": "Férias escolares",
           "start": "2020-06-01",
           "end": "2020-06-30",
           "category": "Ferias"
         },
         {
           // ID interno do evento (opcional)
-          "id": "0003",
+          "id": "0004",
           // Nome do evento (obrigatório)
-          "summary": "Festa de halloween"
+          "summary": "Festa de halloween",
           // Data/hora de inicio do evento - Formato AAAA-MM-DDTHH:mm:ss (obrigatório)
           "start": "2020-10-31T09:00:00",
           // Data de final do evento - Formato AAAA-MM-DDTHH:mm:ss (obrigatório)
@@ -80,9 +96,9 @@ Resposta:
         },
         {
           // ID interno do evento (opcional)
-          "id": "0004",
+          "id": "0005",
           // Nome do evento (obrigatório)
-          "summary": "Festa junina"
+          "summary": "Festa junina",
           // Data/hora de inicio do evento - Formato AAAA-MM-DDTHH:mm:ssZ (obrigatório)
           "start": "2020-07-27T09:00:00Z",
           // Data de final do evento - Formato AAAA-MM-DDTHH:mm:ssZ (obrigatório)
@@ -90,18 +106,6 @@ Resposta:
           // Categoria do evento (opcional)
           "category": "Eventos"
         },
-        {
-          // ID interno do evento (opcional)
-          "id": "0005",
-          // Nome do evento (obrigatório)
-          "summary": "Natal"
-          // Data/hora de inicio do evento - Formato AAAA-MM-DD (obrigatório)
-          "start": "2020-31-12",
-          // Data de final do evento - Formato AAAA-MM-DD (obrigatório)
-          "end": "2020-31-12",
-          // Cor do evento (opcional)
-          "color": "orange"
-        }
       ],
 
       // Categorias associadas aos eventos (opcional)
@@ -112,17 +116,18 @@ Resposta:
           // Nome da categoria. Deve corresponder a uma categoria atribuida a pelo menos um evento (obrigatório)
           "name": "Eventos",
           // Cor que será atribuida a todos os eventos desta categoria (obrigatório)
-          // Cores disponiveis:
-          // TODO
-          "color": "blue"
+          // Cores predefinidas disponiveis:
+          // aqua, purple, salmon, yellow-dark, link, lead-light, danger, success
+          // Além dessas cores é possivel utilizar qualquer cor em hexadecimal
+          "color": "aqua"
         },
         {
           "name": "Feriados",
-          "color": "red"
+          "color": "#F4F6F8"
         },
         {
           "name": "Ferias",
-          "color": "green"
+          "color": "purple"
         }
       ]
     }
