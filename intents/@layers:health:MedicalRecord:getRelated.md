@@ -81,7 +81,7 @@ Resposta:
               "type": "tags", // obrigatório
               "title": "Tipo sanguineo", // obrigatório
               "tags": ["O-", "B-"], // Tipos aceitos: String ou Array String (obrigatório)
-              "mood": "neutral", // Valores possíveis: neutral, success, warning e danger (obrigatório)
+              "mood": "neutral", // Valores possíveis: neutral, good, attention e bad (obrigatório)
               "loinc": "34532-2" // LOINC Code Reference: https://loinc.org/34532-2/ (opcional)
             },
 
