@@ -51,7 +51,7 @@ Resposta:
       // Valores aceitos: "sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"
       "startWeekday": "monday", // default: "sunday"
 
-      // Lista de horários
+      // Lista de horários (obrigatório)
       "schedules": [
         {
           // Título do horário (atividade, disciplina) (obrigatório)
@@ -68,10 +68,10 @@ Resposta:
           "weekday": "monday",
 
           // Horário de início (obrigatório)
-          "startTime": "15:30:00", // ISO 8601 (obrigatório)
+          "startTime": "15:30:00", // Formato (hh:mm:ss) ISO 8601
 
           // Horário de fim (opcional)
-          "endTime": "16:30:00", // Formato de HH:ISO 8601
+          "endTime": "16:30:00", // Formato (hh:mm:ss) ISO 8601
 
           // Localização do horário (opcional)
           "location": "Campus SP, sala 12, bloco B",
