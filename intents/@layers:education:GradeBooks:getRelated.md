@@ -71,7 +71,7 @@ A API deve retornar um JSON com o seguinte formato:
           // Valores possíveis: 'unknown' | 'scheduled' | 'current' | 'ended'
           "status": "ended",
 
-          // Lista de resultados de disciplinas (obrigatório)
+          // Lista de resultados de disciplinas (opcional)
           "subjects": [
             {
               // Título da disciplina (obrigatório)
