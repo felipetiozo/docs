@@ -1,4 +1,4 @@
-# Intent `@layers:education:AcademicRecods:getRelated`
+# Intent `@layers:education:AcademicRecords:getRelated`
 
 Esta intent é usada para obter dados de ocorrências para um usuário específico.
 
