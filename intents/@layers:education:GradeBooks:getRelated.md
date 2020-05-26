@@ -93,7 +93,7 @@ A API deve retornar um JSON com o seguinte formato:
                 "description": "Verbos e substantivos",
 
                 // Data da atividade (opcional)
-                "date": "2020-03-02",
+                "date": "2020-03-02", // Formato ISO 8601 (date: YYYY-MM-DD)
 
                 // Comentário sobre a atividade (opcional)
                 "comment": "O aluno deve estudar mais o infinitivo",
@@ -145,7 +145,7 @@ A API deve retornar um JSON com o seguinte formato:
                 "description": "Provas discussivas e/ou objetivas com intuito de avaliar o aprendizado",
 
                 // Ordem de aparição, do menor para maior (opcional)
-                "order": 1
+                "order": 1 // Tipo: Integer
               }]
             }
           ]
