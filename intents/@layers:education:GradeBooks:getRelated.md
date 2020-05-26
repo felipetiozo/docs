@@ -62,10 +62,10 @@ A API deve retornar um JSON com o seguinte formato:
           "label": "1º Bimestre",
 
           // Data de início do período (obrigatório)
-          "startsAt": "2019-01-10",
+          "startsAt": "2019-01-10", // Formato ISO 8601 (date: YYYY-MM-DD)
 
           // Data de encerramento do período (obrigatório)
-          "endsAt": "2019-04-10",
+          "endsAt": "2019-04-10", // Formato ISO 8601 (date: YYYY-MM-DD)
 
           // Status do período letivo (obrigatório)
           // Valores possíveis: 'unknown' | 'scheduled' | 'current' | 'ended'
