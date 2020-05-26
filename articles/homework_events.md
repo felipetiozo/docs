@@ -30,7 +30,7 @@ A payload da criação de uma tarefa pode ser vista abaixo. Cada um dos campos e
 }
 ```
 
-+ **type**: Existem diversos tipos de posts no Layers. O mais indicado para a criação de tarefas é o ```event``` como mostrado acima. Os tipos de publicações na linha do tempo disponíveis no Layers estão explicados no fim desse guia
++ **type**: Existem diversos tipos de posts no Layers. O mais indicado para a criação de tarefas é o ```event``` como mostrado acima. Os tipos de publicações existentes no Layers estão explicados [aqui](#Tipos-de-publicações-na-linha-do-tempo).
 + **title**: Título da sua publicação que aparecerá na linha do tempo e na agenda de no máximo 45 caractéres.
 + **text**: Texto do corpo da publicação que aparecerá quando o usuário clicar na publicação em markdown.
 + **role**: Perfis de usuários que receberão a publicação.
@@ -77,7 +77,7 @@ Cria um informativo no Layers Education. Aceita os campos explicados abaixo:
 
 ##### 3 - ```report```
 
-Cria um relatório que pode ser respondido individualmente para cada aluno nos targets. Aceita os campos de título, texto de corpo, modelo de relatório e respostas do relatório para cada um dos alunos.
+Cria um relatório que pode ser respondido individualmente para cada aluno nos targets. Aceita os campos explicados abaixo:
 
 + **title**: Título da publicação
 + **text**: Texto de corpo da publicação
@@ -86,7 +86,7 @@ Cria um relatório que pode ser respondido individualmente para cada aluno nos t
 
 ##### 4 - ```banner```
 
-Cria uma imagem em destaque na linha do tempo. Aceita os campos de título, anexos e o objeto banner contendo a chave link com o link de redirecionamento para quando a imagem for clicada
+Cria uma imagem em destaque na linha do tempo. Aceita os campos explicados abaixo:
 
 + **title**: Título da publicação
 + **banner**: Objeto contendo a chave ```link``` com o link para o qual o usuário deve ser redirecionado ao clicar na imagem
@@ -94,8 +94,47 @@ Cria uma imagem em destaque na linha do tempo. Aceita os campos de título, anex
 
 ##### 5 - ```gallery```
 
-Cria uma galeria na linha do tempo. Aceita os campos de título, texto de corpo e também anexos contendo até 30 imagens de até 5MB cada uma.
+Cria uma galeria na linha do tempo. Aceita os campos explicados abaixo:
 
 + **title**: Título da publicação
 + **text**: Texto de corpo da publicação
 + **attachments**: Array contendo até 30 objetos de uploads de imagens com até 5MB cada
+
+##### 6 - ```test```
+
+Cria uma prova na agenda. Aceita os campos explicados abaixo:
+
++ **title**: Título da publicação
++ **text**: Texto de corpo da publicação
++ **date**: Data que a prova será agendada
+
+##### 7 - ```activity```
+
+Cria uma atividade de aula na agenda. Aceita os campos explicados abaixo:
+
++ **title**: Título da publicação
++ **text**: Texto de corpo da publicação
++ **date**: Data que a atividade será agendada
+
+##### 8 - ```diary```
+
+Cria uma atividade de aula na agenda. Aceita os campos explicados abaixo:
+
++ **title**: Título da publicação
++ **text**: Texto de corpo da publicação
++ **date**: Data que a atividade será agendada
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
