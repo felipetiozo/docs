@@ -11,7 +11,7 @@ A payload da criação de um evento pode ser vista abaixo. Cada um dos campos es
 ```js
 // POST /post
 {
-      "type": "event",
+      "type": "activity",
       "title": "título da publicação",
       "text": "texto do corpo da publicação",
       "roles": ["student", "guardian"],
@@ -22,15 +22,11 @@ A payload da criação de um evento pode ser vista abaixo. Cada um dos campos es
             "id": "id_exemplo",
             "type": "group"
         }
-      ],
-      "event": {
-          "allDay": false,
-          "endDate": "2020-05-13T23:59:59.999Z",
-      }
+      ]
 }
 ```
 
-+ **type**: Existem diversos tipos de posts no Layers. O mais indicado para a criação de tarefas para casa é o ```event``` como mostrado acima. Os tipos de publicações existentes no Layers estão explicados [aqui](#Tipos-de-publicações-na-linha-do-tempo).
++ **type**: Existem diversos tipos de posts no Layers. O mais indicado para a criação de tarefas para casa é o ```activity``` como mostrado acima. Os tipos de publicações existentes no Layers estão explicados [aqui](#Tipos-de-publicações-na-linha-do-tempo).
 + **title**: Título da sua publicação que aparecerá na linha do tempo e na agenda de no máximo 45 caractéres.
 + **text**: Texto do corpo da publicação que aparecerá quando o usuário clicar na publicação em markdown.
 + **role**: Perfis de usuários que receberão a publicação.
@@ -61,7 +57,7 @@ Editando o título e o texto de uma publicação:
 
 ##### 1 - ```event```
 
-Cria um evento no Layers Education. Aceita os campos explicados abaixo:
+Cria um evento na linha do tempo e na agenda. Aceita os campos explicados abaixo:
 
 + **title**: Título da publicação
 + **text**: Texto de corpo da publicação
@@ -70,7 +66,7 @@ Cria um evento no Layers Education. Aceita os campos explicados abaixo:
 
 ##### 2 - ```message```
 
-Cria um informativo no Layers Education. Aceita os campos explicados abaixo:
+Cria um informativo na linha do tempo. Aceita os campos explicados abaixo:
 
 + **title**: Título da publicação
 + **text**: Texto de corpo da publicação
