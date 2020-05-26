@@ -80,7 +80,7 @@ A API deve retornar um JSON com o seguinte formato:
               // Abreviação da disciplina (opcional)
               "abbr": "PORT",
 
-              // Lista de atividades
+              // Lista de atividades (opcional)
               "activities": [{
 
                 // Categoria da atividade (opcional)
