@@ -2,11 +2,11 @@
 
 ### Introdução
 
-A automatização da criação de tarefas na agenda por meio da API com a rota de `/post`  pode ser feito seguindo o passo a passo abaixo.
+A automatização da criação de publicações na agenda por meio da API com a rota de `/post`  pode ser feito seguindo o passo a passo abaixo.
 
 ### 1 - Monte o conteúdo do seu post
 
-A payload da criação de uma tarefa pode ser vista abaixo. Cada um dos campos está expicado abaixo do exemplo de código.
+A payload da criação de um evento pode ser vista abaixo. Cada um dos campos está expicado abaixo do exemplo de código.
 
 ```js
 // POST /post
@@ -122,7 +122,7 @@ Cria uma atividade de aula na agenda. Aceita os campos explicados abaixo:
 
 + **title**: Título da publicação
 + **text**: Texto de corpo da publicação
-+ **date**: Data que a atividade será agendada
++ **date**: Data que a diário de aula será agendada
 
 
 
