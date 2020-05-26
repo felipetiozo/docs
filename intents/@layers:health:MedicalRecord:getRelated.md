@@ -50,7 +50,7 @@ Resposta:
           // Título da seção do prontuário (obrigatório)
           "title": "Contato de emergencia",
 
-          // Campos do da seção do prontuário
+          // Campos do da seção do prontuário (obrigatório)
           "fields": [
             // Os "fields" tem 4 tipos ("types") possíveis: "number", "text", "tags" e "attachment"
 
