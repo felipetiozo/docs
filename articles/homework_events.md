@@ -1,4 +1,4 @@
-# Criando tarefas na Agenda
+# Criando eventos na Agenda
 
 ### Introdução
 
@@ -30,7 +30,7 @@ A payload da criação de um evento pode ser vista abaixo. Cada um dos campos es
 }
 ```
 
-+ **type**: Existem diversos tipos de posts no Layers. O mais indicado para a criação de tarefas é o ```event``` como mostrado acima. Os tipos de publicações existentes no Layers estão explicados [aqui](#Tipos-de-publicações-na-linha-do-tempo).
++ **type**: Existem diversos tipos de posts no Layers. O mais indicado para a criação de tarefas para casa é o ```event``` como mostrado acima. Os tipos de publicações existentes no Layers estão explicados [aqui](#Tipos-de-publicações-na-linha-do-tempo).
 + **title**: Título da sua publicação que aparecerá na linha do tempo e na agenda de no máximo 45 caractéres.
 + **text**: Texto do corpo da publicação que aparecerá quando o usuário clicar na publicação em markdown.
 + **role**: Perfis de usuários que receberão a publicação.
