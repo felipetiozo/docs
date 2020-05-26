@@ -55,7 +55,7 @@ A API deve retornar um JSON com o seguinte formato:
       // ended: Livro de notas de um ano passado, já encerrado
       "status": "ended",
 
-      // Lista de livros de notas para cada período deste ano letivo
+      // Lista de livros de notas para cada período deste ano letivo (obrigatório)
       "terms": [
         {
           // Título do período letivo (obrigatório)
@@ -71,7 +71,7 @@ A API deve retornar um JSON com o seguinte formato:
           // Valores possíveis: 'unknown' | 'scheduled' | 'current' | 'ended'
           "status": "ended",
 
-          // Lista de resultados de disciplinas (opcional)
+          // Lista de resultados de disciplinas (obrigatório)
           "subjects": [
             {
               // Título da disciplina (obrigatório)
