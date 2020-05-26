@@ -30,7 +30,7 @@ A payload da criação de uma tarefa pode ser vista abaixo. Cada um dos campos e
 }
 ```
 
-+ **type**: Existem diversos tipos de posts no Layers. O mais indicado para a criação de tarefas é o ```event``` como mostrado acima.
++ **type**: Existem diversos tipos de posts no Layers. O mais indicado para a criação de tarefas é o ```event``` como mostrado acima. Os tipos de publicações na linha do tempo disponíveis no Layers estão explicados no fim desse guia
 + **title**: Título da sua publicação que aparecerá na linha do tempo e na agenda de no máximo 45 caractéres.
 + **text**: Texto do corpo da publicação que aparecerá quando o usuário clicar na publicação em markdown.
 + **role**: Perfis de usuários que receberão a publicação.
@@ -56,3 +56,46 @@ Editando o título e o texto de uma publicação:
       "text": "Texto novo"
 }
 ```
+
+### Tipos de publicações na linha do tempo
+
+##### 1 - ```event```
+
+Cria um evento no Layers Education. Aceita os campos explicados abaixo:
+
++ **title**: Título da publicação
++ **text**: Texto de corpo da publicação
++ **date**: Data de início
++ **event**: Objeto contendo a propriedade ```endDate``` com a data de fim do evento
+
+##### 2 - ```message```
+
+Cria um informativo no Layers Education. Aceita os campos explicados abaixo:
+
++ **title**: Título da publicação
++ **text**: Texto de corpo da publicação
+
+##### 3 - ```report```
+
+Cria um relatório que pode ser respondido individualmente para cada aluno nos targets. Aceita os campos de título, texto de corpo, modelo de relatório e respostas do relatório para cada um dos alunos.
+
++ **title**: Título da publicação
++ **text**: Texto de corpo da publicação
++ **answers**: Array contendo objetos com as respostas de cada pergunta do modelo de relatório para cada um dos alunos no público alvo
++ **report**: Objeto contento a chave ```_id``` com o id do modelo de relatório e a chave ```name``` com o nome do modelo de relatório
+
+##### 4 - ```banner```
+
+Cria uma imagem em destaque na linha do tempo. Aceita os campos de título, anexos e o objeto banner contendo a chave link com o link de redirecionamento para quando a imagem for clicada
+
++ **title**: Título da publicação
++ **banner**: Objeto contendo a chave ```link``` com o link para o qual o usuário deve ser redirecionado ao clicar na imagem
++ **attachments**: Array contendo o objeto do upload da imagem que deve aparecer em destaque na linha do tempo
+
+##### 5 - ```gallery```
+
+Cria uma galeria na linha do tempo. Aceita os campos de título, texto de corpo e também anexos contendo até 30 imagens de até 5MB cada uma.
+
++ **title**: Título da publicação
++ **text**: Texto de corpo da publicação
++ **attachments**: Array contendo até 30 objetos de uploads de imagens com até 5MB cada
