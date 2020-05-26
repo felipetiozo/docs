@@ -51,7 +51,7 @@ Resposta:
       // Valores aceitos: "sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"
       "startWeekday": "monday", // default: "sunday"
 
-      // Lista de horários
+      // Lista de horários (obrigatório)
       "schedules": [
         {
           // Título do horário (atividade, disciplina) (obrigatório)
