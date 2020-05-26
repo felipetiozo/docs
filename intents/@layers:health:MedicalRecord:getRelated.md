@@ -47,7 +47,7 @@ Resposta:
       // Seções do prontuário (obrigatório)
       "sections": [
         {
-          // Título da seção do prontuário
+          // Título da seção do prontuário (obrigatório)
           "title": "Contato de emergencia",
 
           // Campos do da seção do prontuário
