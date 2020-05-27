@@ -1,0 +1,218 @@
+{
+  "type": "object",
+  "properties": {
+    "result": {
+      "type": "array",
+      "minItems": 1,
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "season": {
+              "type": ["string","number","null"]
+            },
+            "student": {
+              "type": "string"
+            },
+            "course": {
+              "type": "string"
+            },
+            "status": {
+              "type": "string",
+              "enum": ["current", "ended"]
+            },
+            "terms": {
+              "type": "array",
+              "minItems": 1,
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "label": {
+                      "type": "string"
+                    },
+                    "startsAt": {
+                      "type": "string",
+                      "format": "date"
+                    },
+                    "endsAt": {
+                      "type": "string",
+                      "format": "date"
+                    },
+                    "status": {
+                      "type": "string",
+                      "enum": ["unknown", "scheduled", "current", "ended"]
+                    },
+                    "subjects": {
+                      "type": "array",
+                      "minItems": 0,
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "label": {
+                              "type": "string"
+                            },
+                            "abbr": {
+                              "type": "string"
+                            },
+                            "activities": {
+                              "type": "array",
+                              "items": [
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "category": {
+                                      "type": "string"
+                                    },
+                                    "label": {
+                                      "type": "string"
+                                    },
+                                    "description": {
+                                      "type": "string"
+                                    },
+                                    "date": {
+                                      "type": "string",
+                                      "format": "date"
+                                    },
+                                    "comment": {
+                                      "type": "string"
+                                    },
+                                    "scoreGiven": {
+                                      "type": ["string", "number", "null"]
+                                    },
+                                    "scoreMaximum": {
+                                      "type": ["string", "number", "null"]
+                                    },
+                                    "scoreMood": {
+                                      "type": "string",
+                                      "enum": ["neutral", "good", "bad"]
+                                    },
+                                    "scoreDate": {
+                                      "type": "string",
+                                      "format": "date"
+                                    }
+                                  },
+                                  "required": [
+                                    "label"
+                                  ]
+                                }
+                              ]
+                            },
+                            "overall": {
+                              "type": "array",
+                              "items": [
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "type": {
+                                      "type": "string",
+                                      "enum": ["other", "attendance", "partial_grade", "final_grade"]
+                                    },
+                                    "label": {
+                                      "type": "string"
+                                    },
+                                    "scoreGiven": {
+                                      "type": ["string", "number", "null"]
+                                    },
+                                    "scoreMaximum": {
+                                      "type": ["string", "number", "null"]
+                                    },
+                                    "scoreMood": {
+                                      "type": "string",
+                                      "enum": ["neutral", "good", "bad"]
+                                    },
+                                    "featured": {
+                                      "type": "boolean"
+                                    }
+                                  },
+                                  "required": [
+                                    "type",
+                                    "label"
+                                  ]
+                                }
+                              ]
+                            },
+                            "categories": {
+                              "type": "array",
+                              "items": [
+                                {
+                                  "type": "object",
+                                  "properties": {
+                                    "name": {
+                                      "type": "string"
+                                    },
+                                    "description": {
+                                      "type": "string"
+                                    },
+                                    "order": {
+                                      "type": "integer"
+                                    }
+                                  },
+                                  "required": [
+                                    "name"
+                                  ]
+                                }
+                              ]
+                            }
+                          },
+                          "required": [
+                            "label"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "label",
+                    "startsAt",
+                    "endsAt",
+                    "status",
+                    "subjects"
+                  ]
+                }
+              ]
+            },
+            "attachments": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": ["file", "link", "image"]
+                    },
+                    "url": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "title",
+                    "type",
+                    "url"
+                  ]
+                }
+              ]
+            }
+          },
+          "required": [
+            "student",
+            "course",
+            "status",
+            "terms"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "result"
+  ]
+}
