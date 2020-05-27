@@ -1,4 +1,4 @@
-# Intent `@layers:education:AcademicRecods:getRelated`
+# Intent `@layers:education:AcademicRecords:getRelated`
 
 Esta intent é usada para obter dados de ocorrências para um usuário específico.
 
@@ -58,7 +58,7 @@ A API deve retornar um JSON com o seguinte formato:
           "id": "ID_DO_REGISTRO",
 
           // Quando o registro foi enviado (formato AAAA-MM-DDTHH:mm)(obrigatório)
-          "createdAt": null,
+          "createdAt": "2020-10-31T09:00:00Z",
 
           // Categoria do registro, vai ser utilizado para filtrar os registros (obrigatório)
           "category": "Notificado por comparecer sem marterial escolar",

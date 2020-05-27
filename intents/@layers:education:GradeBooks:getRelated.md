@@ -55,17 +55,17 @@ A API deve retornar um JSON com o seguinte formato:
       // ended: Livro de notas de um ano passado, já encerrado
       "status": "ended",
 
-      // Lista de livros de notas para cada período deste ano letivo
+      // Lista de livros de notas para cada período deste ano letivo (obrigatório)
       "terms": [
         {
           // Título do período letivo (obrigatório)
           "label": "1º Bimestre",
 
           // Data de início do período (obrigatório)
-          "startsAt": "2019-01-10",
+          "startsAt": "2019-01-10", // Formato ISO 8601 (date: YYYY-MM-DD)
 
           // Data de encerramento do período (obrigatório)
-          "endsAt": "2019-04-10",
+          "endsAt": "2019-04-10", // Formato ISO 8601 (date: YYYY-MM-DD)
 
           // Status do período letivo (obrigatório)
           // Valores possíveis: 'unknown' | 'scheduled' | 'current' | 'ended'
@@ -80,7 +80,7 @@ A API deve retornar um JSON com o seguinte formato:
               // Abreviação da disciplina (opcional)
               "abbr": "PORT",
 
-              // Lista de atividades
+              // Lista de atividades (opcional)
               "activities": [{
 
                 // Categoria da atividade (opcional)
@@ -93,7 +93,7 @@ A API deve retornar um JSON com o seguinte formato:
                 "description": "Verbos e substantivos",
 
                 // Data da atividade (opcional)
-                "date": "2020-03-02",
+                "date": "2020-03-02", // Formato ISO 8601 (date: YYYY-MM-DD)
 
                 // Comentário sobre a atividade (opcional)
                 "comment": "O aluno deve estudar mais o infinitivo",
@@ -145,7 +145,7 @@ A API deve retornar um JSON com o seguinte formato:
                 "description": "Provas discussivas e/ou objetivas com intuito de avaliar o aprendizado",
 
                 // Ordem de aparição, do menor para maior (opcional)
-                "order": 1
+                "order": 1 // Tipo: Integer
               }]
             }
           ]

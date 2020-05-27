@@ -1,4 +1,4 @@
-# Intent `@layers:education:AcademicRecords:getRelated`
+# Intent `@layers:education:AcademicRecords:markRecordsAsViewed`
 
 Esta intent é usada para marcar uma ou mais ocorrências como lidas.
 
