@@ -1,0 +1,95 @@
+{
+  "type": "object",
+  "properties": {
+    "result": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "season": {
+              "type": ["string","number","null"]
+            },
+            "student": {
+              "type": "string"
+            },
+            "course": {
+              "type": "string"
+            },
+            "records": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "category": {
+                      "type": "string"
+                    },
+                    "caption": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "viewedAt": {
+                      "type": ["string", "null"],
+                      "format": "date-time"
+                    },
+                    "viewedBy": {
+                      "type": ["string", "null"],
+                      "format": "date-time"
+                    },
+                    "metadata": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "label": {
+                              "type": "string"
+                            },
+                            "value": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "label",
+                            "value"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "createdAt",
+                    "category",
+                    "caption",
+                    "description"
+                  ]
+                }
+              ]
+            }
+          },
+          "required": [
+            "student",
+            "course",
+            "records"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "result"
+  ]
+}
