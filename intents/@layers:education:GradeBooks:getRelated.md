@@ -104,7 +104,7 @@ A API deve retornar um JSON com o seguinte formato:
                 // Nota máxima da atividade (opcional)
                 "scoreMaximum": "10",
 
-                // Indica se a nova é boa (nota azul), ruim (nota vermelha) ou neutra (opcional)
+                // Indica se a nota é boa (nota azul), ruim (nota vermelha) ou neutra (opcional)
                 // Valores possíveis: 'neutral' | 'good' | 'bad'
                 "scoreMood": "good",
 
@@ -128,7 +128,7 @@ A API deve retornar um JSON com o seguinte formato:
                 // Nota máxima do resultado (opcional)
                 "scoreMaximum": "10",
 
-                // Indica se a nova é boa (nota azul), ruim (nota vermelha) ou neutra (opcional)
+                // Indica se a nota é boa (nota azul), ruim (nota vermelha) ou neutra (opcional)
                 // Valores possíveis: 'neutral' | 'good' | 'bad'
                 "scoreMood": "good",
 
