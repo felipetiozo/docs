@@ -1,6 +1,11 @@
-# Intent `@layers:education:AttendanceHistory:getRelated`
+# Intent `@layers:education:Attendance:getRelated`
 
-Esta intent é usada para retornar o histórico de frequência de um ou mais alunos
+Esta intent é usada para retornar a frequência de um ou mais alunos relacionados. Essa intent contempla 3 visões de frequência:
+- Visão geral da frequência do curso
+- Visão geral por disciplinas
+- Visão geral por categorias (ou períodos)
+
+As categorias podem ser utilizadas para agrupadar registros de frequência e listar uma visão geral dessa categoria relacionando com a disciplina. Ex: Faltas e Carga Horária do 1º bimestre de Matemática.
 
 Deve haver uma API que recebe uma requisição `POST` com a seguinte estrutura de dados:
 
@@ -9,7 +14,7 @@ Deve haver uma API que recebe uma requisição `POST` com a seguinte estrutura d
 ```js
 {
   "result": [
-    // Histórico de frequência do aluno
+    // Frequência de um determinado aluno
     {
 
       // ID interno do histórico, para possível fetch individual futuro (opcional)
@@ -89,8 +94,8 @@ Deve haver uma API que recebe uma requisição `POST` com a seguinte estrutura d
         }]
       }],
 
-      // Histórico de frequência por data (opcional)
-      "history": [
+      // Registro de frequência por data (opcional)
+      "records": [
         {
           // Tipo da frequência, podendo ser "Presente", "Falta", "Falta justificada" ou "Dispensado", 
           // Valores possíveis: "present", "absent", "justified_absency", "excused"
