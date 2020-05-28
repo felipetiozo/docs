@@ -105,7 +105,7 @@ Resposta:
           "end": "2020-07-27T21:45:00Z",
           // Categoria do evento (opcional)
           "category": "Eventos"
-        },
+        }
       ],
 
       // Categorias associadas aos eventos (opcional)
