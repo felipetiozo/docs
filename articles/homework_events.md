@@ -21,6 +21,14 @@ A payload da criação de um evento pode ser vista abaixo. Cada um dos campos es
         {
             "id": "id_exemplo",
             "type": "group"
+        },
+        {
+            "alias": "alias_exemplo",
+            "type": "member"
+        },
+        {
+            "email": "email_exemplo",
+            "type": "user"
         }
       ]
 }
