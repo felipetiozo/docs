@@ -1,0 +1,117 @@
+{
+  "type": "object",
+  "properties": {
+    "result": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": ["string", "number", "null"]
+            },
+            "name": {
+              "type": "string"
+            },
+            "updatedAt": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "sections": {
+              "type": "array",
+              "minItems": 1,
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "fields": {
+                      "type": "array",
+                      "minItems": 1,
+                      "items": [
+                        {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string",
+                              "enum": ["text", "number", "tags", "attachment"]
+                            },
+                            "title": {
+                              "type": "string"
+                            },
+                            "caption": {
+                              "type": "string"
+                            },
+                            "unit": {
+                              "type": "string"
+                            },
+                            "number": {
+                              "type": ["number", "string"]
+                            },
+                            "text": {
+                              "type": "string"
+                            },
+                            "tags": {
+                              "type": ["string", "number", "array"],
+                              "contains": {
+                                "type": ["number", "string"]
+                              }
+                            },
+                            "mood": {
+                              "type": "string",
+                              "enum": ["neutral", "good", "attention", "bad"]
+                            },
+                            "attachment": {
+                              "type": "object",
+                              "properties": {
+                                "title": {
+                                  "type": "string"
+                                },
+                                "type": {
+                                  "type": "string",
+                                  "enum": ["file", "link", "image"]
+                                },
+                                "url": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "title",
+                                "type",
+                                "url"
+                              ]
+                            },
+                            "loinc": {
+                              "type": "string"
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "title"
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "title",
+                    "fields"
+                  ]
+                }
+              ]
+            }
+          },
+          "required": [
+            "name",
+            "sections"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "result"
+  ]
+}
