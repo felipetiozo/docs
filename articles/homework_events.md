@@ -21,6 +21,14 @@ A payload da criação de um evento pode ser vista abaixo. Cada um dos campos es
         {
             "id": "id_exemplo",
             "type": "group"
+        },
+        {
+            "alias": "alias_exemplo",
+            "type": "member"
+        },
+        {
+            "email": "email_exemplo",
+            "type": "user"
         }
       ]
 }
@@ -32,7 +40,9 @@ A payload da criação de um evento pode ser vista abaixo. Cada um dos campos es
 + **role**: Perfis de usuários que receberão a publicação.
 + **date**: Data do evento.
 + **viewAt**: Data na qual o evento deve aparecer para os usuários.
-+ **targets**: Público alvo da publicação. Array contento objetos com a string ```id``` com o identificador de um membro, usuário, grupo ou tag e a string ```type``` contendo o tipo dessa entidade. Nesse caso, o público alvo são os Familiares ou Alunos que estão vinculados com o grupo de id_exemplo/
++ **targets**: Público alvo da publicação. Array contento objetos as chaves:
+  + **id | email | alias**: Indica o identificador do target. Obs.: Informe apenas uma destas chaves por target.
+  + **kind**: Indica o tipo do target. Pode ser ```user```, ```member```, ```group``` ou ```tag```.
 + **event**: Objeto contendo o booleano ```allDay``` indicando se o evento deve durar o dia todo e a string ```endDate``` com a data de final do evento.
 
 ### 2 - Envie sua publicação
