@@ -56,6 +56,8 @@ Informativos são a publicação recomendada para recados ou avisos simples. Ess
 
 Eventos são o tipo de publicação ideal para avisos que tem uma data específica como um convite ou lembrete de dever de casa. Esse tipo de publicação vai tanto para a linha do tempo quanto para a agenda. 
 
+> obs: eventos são o único tipo de publicação que aparece tanto na linha do tempo quanto na agenda.
+
 ```js
 {
       "type": "event",
