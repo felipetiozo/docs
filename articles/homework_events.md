@@ -35,7 +35,7 @@ A payload da criação de um evento pode ser vista abaixo. Cada um dos campos es
 ```
 
 + **type**: Existem diversos tipos de posts no Layers. O mais indicado para a criação de tarefas para casa é o ```activity``` como mostrado acima. Os tipos de publicações existentes no Layers estão explicados [aqui](#Tipos-de-publicações-na-linha-do-tempo).
-+ **title**: Título da sua publicação que aparecerá na linha do tempo e na agenda de no máximo 45 caractéres.
++ **title**: Título da sua publicação que aparecerá na agenda de no máximo 45 caractéres. Recomendável usar o nome da disciplina.
 + **text**: Texto do corpo da publicação que aparecerá quando o usuário clicar na publicação em markdown.
 + **role**: Perfis de usuários que receberão a publicação.
 + **date**: Data do evento.
