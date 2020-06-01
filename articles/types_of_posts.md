@@ -170,7 +170,7 @@ Relatórios inddividuais sào publicações que, além dos campos de título e t
 **answers**: Array contendo objetos com as respostas de cada pergunta do modelo de relatório para cada um dos alunos no público alvo
 **report**: Objeto contento a chave _id com o id do modelo de relatório e a chave name com o nome do modelo de relatório
 
-### Publicações para a aagenda
+### Publicações para a agenda
 
 ##### 1 - Prova (```test```)
 
