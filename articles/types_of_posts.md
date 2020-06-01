@@ -67,7 +67,7 @@ Eventos são o tipo de publicação ideal para avisos que tem uma data específi
       "event": {
           "allDay": false,
           "endDate": "2020-05-13T23:59:59.999Z",
-      }
+      },
       "roles": ["student", "guardian"],
       "targets": [
         {
