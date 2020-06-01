@@ -26,7 +26,7 @@ Deve haver uma API que recebe uma requisição `POST` com a seguinte estrutura d
       // Curso que o aluno está matrículado (obrigatório)
       "course": "9º Ano - Ensino Fundamental",
 
-      // Visão geral da frequência do curso (obrigatório)
+      // Visão geral da frequência do curso (opcional)
       "overall": {
         // Carga de trabalho geral (apenas valores positivos)
         "workload": 1600, // Tipo: Integer (opcional)
