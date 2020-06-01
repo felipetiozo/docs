@@ -43,7 +43,6 @@ A payload da criação de um evento pode ser vista abaixo. Cada um dos campos es
 + **targets**: Público alvo da publicação. Array contento objetos as chaves:
   + **id | email | alias**: Indica o identificador do target. Obs.: Informe apenas uma destas chaves por target.
   + **kind**: Indica o tipo do target. Pode ser ```user```, ```member```, ```group``` ou ```tag```.
-+ **event**: Objeto contendo o booleano ```allDay``` indicando se o evento deve durar o dia todo e a string ```endDate``` com a data de final do evento.
 
 ### 2 - Envie sua publicação
 
