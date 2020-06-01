@@ -125,7 +125,7 @@ Galerias de fotos são publicadas na linha do tempo do app e são ideais para a 
     "attachments": [
         {"objeto da imagem 1"},
         {"objeto da imagem 2"}
-    ]
+    ],
     "roles": ["student", "guardian"],
     "targets": [
         {
@@ -155,8 +155,8 @@ Relatórios inddividuais sào publicações que, além dos campos de título e t
     "answers": [
         {"respostas para o aluno 1"},
         {"respostas para o aluno 2"}
-    ]
-    "attachments": []
+    ],
+    "attachments": [],
     "roles": ["student", "guardian"],
     "targets": [
         {
