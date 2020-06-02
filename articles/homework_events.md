@@ -54,7 +54,7 @@ Com as informações da publicação já configuradas de acordo com o modelo aci
 
 Editando o título e o texto de uma publicação:
 
-##### **POST** `https://api.layers.digital/v1/post/:postId`
+##### **PUT** `https://api.layers.digital/v1/post/:postId`
 ```js
 {
       "title": "Título novo",
