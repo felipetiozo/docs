@@ -8,8 +8,8 @@ A automatização da criação de publicações na agenda por meio da API com a 
 
 A payload da criação de um evento pode ser vista abaixo. Cada um dos campos está expicado abaixo do exemplo de código.
 
+##### **POST** `https://api.layers.digital/v1/post`
 ```js
-// POST /post
 {
       "type": "activity",
       "title": "título da publicação",
@@ -54,8 +54,8 @@ Com as informações da publicação já configuradas de acordo com o modelo aci
 
 Editando o título e o texto de uma publicação:
 
+##### **POST** `https://api.layers.digital/v1/post/:postId`
 ```js
-// PUT /post/:postId
 {
       "title": "Título novo",
       "text": "Texto novo"
