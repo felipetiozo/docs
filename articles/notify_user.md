@@ -16,7 +16,7 @@ O corpo da requisição segue o seguinte formato:
 {
     "title": "Título da notificação",
     "body": "Texto do corpo da notificação"
-    "target": {
+    "targets": {
         "topics": [{
             "alias": "alias" // 'alias' do user/member/group/tag
             "kind": "member" // Tipo do target, pode ser: user, member, group ou tag
