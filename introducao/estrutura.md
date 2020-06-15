@@ -82,7 +82,7 @@ Matriculas representam o vínculo entre grupos e membros:
 
 ### Apps
 
-Apps sào a maneira pela qual é possível adicionar funcionalidades ao Layers Education. O próprio Layers disponibiliza alguns apps como as visualizações de informações de ERP's integrados além das API's de comunicação, solicitações e pagamentos, mas outras empresas podem também desenvolver e disponibilizar seus apps para instituições de ensino utilizando as features disponibilizadas.
+Apps são a maneira pela qual é possível adicionar funcionalidades ao Layers Education. O próprio Layers disponibiliza alguns apps como as visualizações de informações de ERP's integrados além das API's de comunicação, solicitações e pagamentos, mas outras empresas podem também desenvolver e disponibilizar seus apps para instituições de ensino utilizando as features disponibilizadas pelo Layers.
 
 + API
 + Services
