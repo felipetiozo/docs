@@ -1,4 +1,4 @@
-# Associando um atendente a um canal de atendimento
+# Associando e removendo atendentes de canais de atendimento
 
 Para que um usuário possa responder solicitações feitas em um determinado canal de atendimento é necessário que ele esteja cadastrado como atendente desse canal. Esse cadastro do atendente pode ser feito chamando a rota abaixo:
 
