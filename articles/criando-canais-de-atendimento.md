@@ -2,7 +2,7 @@
 
 Canais de atendimento no Layers são a maneira de organizar mensagens em grupos por departamento ou assunto. É possível também escopar quais atendentes tem permissão para responder determinadas mensagens através dos vínculos entre atendentes e canais de atendimento uma vez que um atendente só pode responder mensagens de canais aos quais está vinculado.
 
-A requisição abaixp cria um canal de atendimento no Layers
+A requisição abaixo cria um canal de atendimento no Layers
 
 ##### **POST** ```/tickets/channels```
 ```js
