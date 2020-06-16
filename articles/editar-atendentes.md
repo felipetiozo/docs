@@ -25,3 +25,7 @@ A resposta dessa requisição será:
 + **email**: e-mail do usuário
 + **roles**: permissões do usuário
 + **status**: status do usuário
+
+Para remover um atendente de um canal de atendimento chame a mesma rota usando o metodo ```delete```.
+
+### **DELETE** ```/tickets/channels/{channelId}/agents/{userId}```
