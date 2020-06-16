@@ -12,7 +12,7 @@ A resposta dessa requisição será:
 
 ```js
 {
-    "_id": String,
+    "id": String,
     "name": String,
     "email": String,
     "roles": [String],
@@ -20,7 +20,7 @@ A resposta dessa requisição será:
 }
 ```
 
-+ **_id**: identificador do usuário
++ **id**: identificador do usuário
 + **name**: nome do usuário
 + **email**: e-mail do usuário
 + **roles**: permissões do usuário
