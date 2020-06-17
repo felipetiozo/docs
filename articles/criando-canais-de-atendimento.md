@@ -2,7 +2,7 @@
 
 Canais de atendimento no Layers são a maneira de organizar mensagens em grupos por departamento ou assunto. É possível também escopar quais atendentes tem permissão para responder determinadas mensagens através dos vínculos entre atendentes e canais de atendimento uma vez que um atendente só pode responder mensagens de canais aos quais está vinculado.
 
-A requisição abaixp cria um canal de atendimento no Layers
+A requisição abaixo cria um canal de atendimento no Layers
 
 ##### **POST** ```/tickets/channels```
 ```js
@@ -16,7 +16,7 @@ Essa requisição retorna a seguinte resposta:
 
 ```js
 {
-    "_id": String,
+    "id": String,
     "public": Boolean,
     "name": String,
     "agents": [String],
@@ -30,7 +30,7 @@ Essa requisição retorna a seguinte resposta:
 }
 ```
 
-+ **_id**: identificador do documento do canal de atendimento
++ **id**: identificador do documento do canal de atendimento
 + **public**: indica se o canal será público ou interno. Se for público aparecerá para usuários quando forem criar uma solicitaçõa
 + **name**: nome do canal de atendimento
 + **agents**: array contendo os identificadores de documentos de usuários que podem responder mensagens para esse canal
@@ -39,7 +39,7 @@ Essa requisição retorna a seguinte resposta:
     + **title**: título do assunto 
     + **description**: descrição do assunto
 
-Com exceção do ```_id``` e dos ```agents``` todas as propriedades podem ser editadas por meio da requisição abaixo:
+Com exceção do ```id``` e dos ```agents``` todas as propriedades podem ser editadas por meio da requisição abaixo:
 
 ### **PUT** ```/tickets/channels/{channelId}```
 ```js
