@@ -35,7 +35,7 @@ A resposta para essa requisição será uma lista dos canais de atendimento exis
 
 Caso deseje ver informações de um canal de atendimento específico, isso pode ser feito especificando o id como parametro na query.
 
-##### **POST** ```/tickets/channels/{channelId}```
+##### **GET** ```/tickets/channels/{channelId}```
 
 Essa requisição retorna um objeto com as informações do canal de atendimento especificado.
 
