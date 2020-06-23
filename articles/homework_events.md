@@ -8,8 +8,8 @@ A automatização da criação de publicações na agenda por meio da API com a 
 
 A payload da criação de um evento pode ser vista abaixo. Cada um dos campos está expicado abaixo do exemplo de código.
 
+##### **POST** `https://api.layers.digital/v1/post`
 ```js
-// POST /post
 {
       "type": "activity",
       "title": "título da publicação",
@@ -35,7 +35,7 @@ A payload da criação de um evento pode ser vista abaixo. Cada um dos campos es
 ```
 
 + **type**: Existem diversos tipos de posts no Layers. O mais indicado para a criação de tarefas para casa é o ```activity``` como mostrado acima. Os tipos de publicações existentes no Layers estão explicados [aqui](#Tipos-de-publicações-na-linha-do-tempo).
-+ **title**: Título da sua publicação que aparecerá na linha do tempo e na agenda de no máximo 45 caractéres.
++ **title**: Título da sua publicação que aparecerá na agenda de no máximo 45 caractéres. Recomendável usar o nome da disciplina.
 + **text**: Texto do corpo da publicação que aparecerá quando o usuário clicar na publicação em markdown.
 + **role**: Perfis de usuários que receberão a publicação.
 + **date**: Data do evento.
@@ -43,7 +43,6 @@ A payload da criação de um evento pode ser vista abaixo. Cada um dos campos es
 + **targets**: Público alvo da publicação. Array contento objetos as chaves:
   + **id | email | alias**: Indica o identificador do target. Obs.: Informe apenas uma destas chaves por target.
   + **kind**: Indica o tipo do target. Pode ser ```user```, ```member```, ```group``` ou ```tag```.
-+ **event**: Objeto contendo o booleano ```allDay``` indicando se o evento deve durar o dia todo e a string ```endDate``` com a data de final do evento.
 
 ### 2 - Envie sua publicação
 
@@ -55,8 +54,8 @@ Com as informações da publicação já configuradas de acordo com o modelo aci
 
 Editando o título e o texto de uma publicação:
 
+##### **PUT** `https://api.layers.digital/v1/post/:postId`
 ```js
-// PUT /post/:postId
 {
       "title": "Título novo",
       "text": "Texto novo"

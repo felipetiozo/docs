@@ -49,6 +49,30 @@ A API deve retornar um JSON com o seguinte formato:
 
     // Qual é o número total de parcelas (por padrão, será a contagem de payables) (opcional)
     installments: 12,
+    
+    // Informações de quem irá pagar as cobranças (opcional)
+    customer: {
+    
+      // Documento do pagador (obrigatório)
+      document: {
+        // Tipo do documento cpf|cnpj (obrigatório)
+        kind: "cpf",
+        // Número do documento (obrigatório)
+        value: "111"
+      },
+    
+      // Nome do pagador (obrigatório)
+      name: "Felipe Layers",
+      
+      // Email do pagador (opcional)
+      email: "email@layers.education",
+      
+      // Telefone do pagador (opcional)
+      phone: "111...",
+      
+      // Data de nascimento do pagador (formato AAAA-MM-DD) (opcional)
+      birth: "2020-02-01"      
+    },
 
     // Lista de cobranças que fazem parte desse grupo (obrigatório)
     payables: [

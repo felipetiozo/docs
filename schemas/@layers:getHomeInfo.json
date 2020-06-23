@@ -1,0 +1,73 @@
+{
+  "type": "object",
+  "properties": {
+    "badge": [
+      "boolean",
+      "number"
+    ],
+    "featured": "object",
+    "properties": {
+      "title": "string",
+      "cards": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "label": {
+              "type": "string"
+            },
+            "title": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "mood": {
+              "type": "string",
+              "enum": [
+                "neutral",
+                "attention",
+                "success",
+                "danger"
+              ]
+            },
+            "image": {
+              "type": "string"
+            },
+            "action": {
+              "type": "object",
+              "properties": {
+                "target": {
+                  "type": "string",
+                  "enum": [
+                    "portal",
+                    "url"
+                  ]
+                },
+                "url": {
+                  "type": "string"
+                },
+                "params": {
+                  "type": "string"
+                },
+                "required": [
+                  "target"
+                ]
+              }
+            },
+            "required": [
+              "label", 
+              "title", 
+              "description", 
+              "action"
+            ]
+          }
+        }
+      ],
+      "required": [
+        "title",
+         "cards"
+      ]
+    }
+  }
+}
