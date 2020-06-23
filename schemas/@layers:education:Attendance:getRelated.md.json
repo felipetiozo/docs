@@ -1,0 +1,189 @@
+{
+  "type": "object",
+  "properties": {
+    "result": {
+      "type": "array",
+      "items": [{
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": [
+              "string",
+              "number",
+              "null"
+            ]
+          },
+          "student": {
+            "type": "string"
+          },
+          "course": {
+            "type": "string"
+          },
+          "overall": {
+            "type": "object",
+            "properties": {
+              "workload": {
+                "type": "integer",
+                "minimum": 0.0
+              },
+              "workloadUnit": {
+                "type": "string",
+                "enum": [
+                  "h",
+                  "m"
+                ]
+              },
+              "presencePercentage": {
+                "type": "number",
+                "minimum": 0.0,
+                "maximum": 1.0
+              },
+              "absenceTotal": {
+                "type": "integer",
+                "minimum": 0.0
+              },
+              "mood": {
+                "type": "string",
+                "enum": [
+                  "neutral",
+                  "attention",
+                  "good",
+                  "bad"
+                ]
+              }
+            }
+          },
+          "subjects": {
+            "type": "array",
+            "items": [{
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string"
+                },
+                "overall": {
+                  "type": "object",
+                  "properties": {
+                    "workload": {
+                      "type": "integer",
+                      "minimum": 0.0
+                    },
+                    "workloadUnit": {
+                      "type": "string",
+                      "enum": [
+                        "h",
+                        "m"
+                      ]
+                    },
+                    "presencePercentage": {
+                      "type": "number",
+                      "minimum": 0.0,
+                      "maximum": 1.0
+                    },
+                    "absenceTotal": {
+                      "type": "integer",
+                      "minimum": 0.0
+                    },
+                    "mood": {
+                      "type": "string",
+                      "enum": [
+                        "neutral",
+                        "attention",
+                        "good",
+                        "bad"
+                      ]
+                    }
+                  }
+                },
+                "categories": {
+                  "type": "array",
+                  "items": [{
+                    "type": "object",
+                    "properties": {
+                      "name": {
+                        "type": "string"
+                      },
+                      "workload": {
+                        "type": "integer",
+                        "minimum": 0.0
+                      },
+                      "workloadUnit": {
+                        "type": "string",
+                        "enum": [
+                          "h",
+                          "m"
+                        ]
+                      },
+                      "presencePercentage": {
+                        "type": "number",
+                        "minimum": 0.0,
+                        "maximum": 1.0
+                      },
+                      "absenceTotal": {
+                        "type": "integer",
+                        "minimum": 0.0
+                      },
+                      "mood": {
+                        "type": "string",
+                        "enum": [
+                          "neutral",
+                          "attention",
+                          "good",
+                          "bad"
+                        ]
+                      }
+                    }
+                  }]
+                }
+              },
+              "required": [
+                "name"
+              ]
+            }]
+          },
+          "records": {
+            "type": "array",
+            "items": [{
+              "type": "object",
+              "properties": {
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "present",
+                    "absent",
+                    "justified_absency",
+                    "excused"
+                  ]
+                },
+                "date": {
+                  "type": "string",
+                  "format": "date"
+                },
+                "subject": {
+                  "type": "string"
+                },
+                "caption": {
+                  "type": "string"
+                },
+                "category": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "date",
+                "subject"
+              ]
+            }]
+          }
+        },
+        "required": [
+          "student",
+          "course"
+        ]
+      }]
+    }
+  },
+  "required": [
+    "result"
+  ]
+}
