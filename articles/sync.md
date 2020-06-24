@@ -74,4 +74,4 @@ Os dados devem estar no formato abaixo para serem enviados para a rosta de sincr
 
 ### 2 - Envie esse esses para a nossa API
 
-Para efetuar a sincronização de dados, envie uma requisição do tipo POST para a /sync com os headers de de autorização e identificador da comunidade e o seu objeto no corpo. Para mais detalhes sobre a requisição, seus headers, corpo e possíveis respostas, consulte a (specificação da rota de sincronização)[http://sync.spec.com]
+Para efetuar a sincronização de dados, envie uma requisição do tipo POST para a `/sync` com os headers de `authorization` e `community-id` e o seu objeto com os dados da sincronização no corpo. 
