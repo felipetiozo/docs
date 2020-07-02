@@ -67,18 +67,8 @@ A API deve retornar um JSON com o seguinte formato:
         "image": "https://image.com",
 
         //Para onde o clique no card deve redirecionar o usuário (obrigatório)
-        "action": {
-          //Alvo onde a ação vai ser executada, valores possiveis: (obrigatório)
-          //portal: Ação é executada no portal do proprio app dentro do Layers
-          //url: Ação é abrir uma url no navegador
-          "target": "portal",
-
-          //URL que deve ser aberta no navegador. Campo obrigatório caso target seja url
-          "url": null,
-
-          //Parametros que devem ser enviados para o portal. Campo obrigatório caso target seja portal
-          "params": "..."
-        }
+        //Pode ser uma URL absoluta (abre no navegador) ou uma URI de um recurso do Layers (portal, settings, etc)
+        "location": "/portal/portalAlias/path/a/b/c"
       }
     ]
   }
