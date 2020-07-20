@@ -80,6 +80,22 @@ Resposta:
           "caption": "Prof(a): Ana Maria",
         }
       ],
+      
+      
+      // Lista de anexos dos horários (opcional)
+      "attachments": [
+        {
+          // Título do anexo
+          "title": "Horarios.pdf",
+
+          // Tipo do anexo
+          // Valores possíveis: 'file' | 'link' | 'image'
+          "type": "file",
+
+          // URL para baixar o anexo
+          "url": "https://horarios.pdf"
+        }
+      ]
     }
   ]
 }
