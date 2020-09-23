@@ -13,6 +13,32 @@ Deve haver uma API que recebe uma requisição `POST` com a seguinte estrutura d
 
 ```js
 {
+  "context": {
+    "issuedAt": Date,  // Quando a chamada foi feita
+    "action": '@layers:education:Attendance:getRelated.md',
+    "community": String,  // Comunidade do usuário
+  },
+  "data": {
+    "user": {
+      "id": String,  // ID do usuário
+      "name": String,  // Nome do usuário
+      "alias": String | Number | null,  // Alias do usuário
+      "timezone": String,  // Fuso horário do usuário
+      "language": String,  // Língua preferencial do usuário
+      "accountId": String,  // ID da account do usuário
+    },
+  },
+  "secret": String, // Chave secreta
+}
+```
+
+A API deve retornar um JSON com o seguinte formato:
+
+#### Resposta:
+
+
+```js
+{
   "result": [
     // Frequência de um determinado aluno
     {
