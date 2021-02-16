@@ -108,7 +108,7 @@ Caso utilize mais de um item na chave `includes`, é necessário separar por ví
         "community": String, // Identificador único
         "icon": String, // Logo
         "name": String, // Nome
-    }
+    },
     "groups": [ // Incluir "includes=groups" na querystring para ter acesso
         {
             "id": String, // Identificador único do grupo
